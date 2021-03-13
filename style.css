@@ -19,5 +19,9 @@
             
             h1 { font-weight: bold; text-align: center; }
 
-            
+            p 
+              {
+                padding-left: 20px;
+
+            }
                 
