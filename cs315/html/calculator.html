@@ -1,0 +1,57 @@
+<!--w1d2- Q3. Design a simple calculator application as shown in picture below andmake it work. Put
+this on your GitHub Pages site and put a link to it on your home page.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <script>
+   
+         function add(){
+             let firstValue = Number(document.getElementById ("firstValue").value);
+             let secondValue = Number(document.getElementById ("secondValue").value);
+             let result = firstValue + secondValue;
+             document.getElementById("result").value = result;
+             //alert(result);
+         }
+     
+         function sub(){
+             let firstValue = Number(document.getElementById ("firstValue").value);
+             let secondValue = Number(document.getElementById ("secondValue").value);
+             let result = firstValue - secondValue;
+             document.getElementById("result").value = result;
+            // alert(result);
+         }
+     
+         function multiply(){
+             let firstValue = Number(document.getElementById ("firstValue").value);
+             let secondValue = Number(document.getElementById ("secondValue").value);
+             let result = firstValue * secondValue;
+             document.getElementById("result").value = result;
+             //alert(result);
+         }
+     </script>
+
+      <p> First Value</p>
+      <p> <input type = "text" id = "firstValue" value = ""> </p>   
+      <p> Second Value</p>
+      <p> <input type = "text" id = "secondValue" value = ""> </p>        
+      
+      <p>Result  is : <input type = "text" id = "result" readonly > </p>
+      
+      <p> Operations: </p>
+        
+    <input type = "submit" value = "+" onclick = "add() " >
+    <input type = "submit" value = "-" onclick = "sub()">
+    <input type = "submit" value = "*" onclick = "multiply()">
+    <div><br></div>
+      
+
+</body>
+</html>
