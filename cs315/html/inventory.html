@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+</head>
+
+<body>
+    <div class = "container" >
+        <h1>Inventory</h1>
+        <form id ="inventory-form">
+        <div>
+           <label for="itemname"> Item Name</label>
+           <input type="text" id = "itemname" class = "u-full-width" value = "Computer">
+        </div>
+          <div>
+          <label for="itemcategory">Item Category</label>
+          <input type="itemcategory" id = "itemcategory" class = "u-full-width" value = "Digital">
+         </div>
+         <div>
+             <label for="quantity">Quantity</label>
+             <input type="quantity" id="quantity" class = "u-full-width" value = "100">
+         </div>
+         <div>
+             <button type = "button" id = "button" class = "u-full-width">Add</button>
+             <!-- <input type="add" value ="Add" class="u-full-width"> -->
+         </div>
+   </form>
+   
+   <table class = "u-full-width">
+       <thead>
+           <tr>
+               <th>Product name</th>
+               <th>Category</th>
+               <th>Quantity</th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody id="inventory-list"></tbody>
+
+   </table>
+</div>
+
+<script src = "app.js"></script>
+    
+
+</body>
+</html>
