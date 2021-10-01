@@ -1,3 +1,15 @@
+<!--w1d2 Q2. Create and validate a well-formedHTML 5 document to produce output as shownin the
+picture below.
+Put this on your GitHub Pages site and put a link to it on your home page.
+a.When "Click to add" button is clicked, text typed inside input text field should be
+appended to the ouput textarea and input field should be cleared.-->
+function add(){
+
+    let input = document.getElementById("txtInput").value;
+    document.getElementById("txtOutput").innerHTML = input;
+    document.getElementById("txtInput").value = "";
+    }
+
 // Inventory Constructors
 
 function Inventory(itemname, itemcategory, quantity){
