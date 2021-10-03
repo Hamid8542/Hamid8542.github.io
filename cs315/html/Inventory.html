@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="myStyle.css">
+  <link rel="stylesheet" href="/cs315/css/myStyle.css">
 </head>
 <body>
   <h1>Inventory</h1>
@@ -35,12 +35,12 @@
     </tr>
   </table>
   <script>
-    var array = [];
-    var index = 0;
+    let array = [];
+    let index = 0;
 
     function add() {
       index++;
-      var item = {
+      let item = {
         id: index, name: document.getElementById("itemName").value,
         category: document.getElementById("category").value,
         quantity: document.getElementById("quantity").value
@@ -75,9 +75,9 @@
         console.log(this.parentNode.parentNode.childNodes)// All 5 columns(td's)
         let childNodes = this.parentNode.parentNode.childNodes;
 
-        document.getElementById("itemName").value = 1//childNodes[0].innerHTML;
-        document.getElementById("category").value = 2//childNodes[1].innerHTML;
-        document.getElementById("quantity").value = 3//childNodes[2].innerHTML;
+        document.getElementById("itemName").value = childNodes[0].innerHTML;
+        document.getElementById("category").value = childNodes[1].innerHTML;
+        document.getElementById("quantity").value = childNodes[2].innerHTML;
 
         let myId = this.getAttribute("myId");
         array.forEach(function (item) {
