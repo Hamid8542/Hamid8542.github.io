@@ -5,7 +5,7 @@
     font-size: 21px;
     margin-top: 0px;
     font-family: calibri,canadara,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+        
 }
 
 h1 {
@@ -24,16 +24,17 @@ h2 {
     text-size-adjust: 10px;
 }
 h4 {
-    background-color: #a8a7e3;
+    background-color: #c8e3f8;
     font-family: sans-serif;
     text-align: center;
     align-items: center;
-    -ms-text-size-adjust: 200px;
+    -ms-text-size-adjust: 100px;
+    color: #080d11;
 }
 
 p ,ol {
     font-size: 30px;
-    color: #3747b3;
+    color: #c8e3f8;
     font-family: sans-serif;
     text-align: center;
     margin-bottom: 0px;
@@ -42,15 +43,15 @@ p ,ol {
 
 ol {
     font-size: 20px;
-    color: #3747b3;
+    color: #080d11;
     font-family: sans-serif;
     text-align: center;
     margin-bottom: 0px;
-    background-color:rgb(50, 169, 205);
+    background-color:#c8e3f8;
     
 }
 
 label {
     display: block;
     width: 130px;
-  }
+  } */
