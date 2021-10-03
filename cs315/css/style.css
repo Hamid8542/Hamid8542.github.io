@@ -1,3 +1,9 @@
+.head {
+   image-rendering: auto;
+    align-items: center;
+    
+}
+
 .body {
     background-color: #a8a7e3;
     background-image: url(../cs315/img/background.jpg) ;
