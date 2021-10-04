@@ -1,9 +1,9 @@
-.head {
+/* .head {
    image-rendering: auto;
     align-items: center;
     
 }
-
+ */
 .body {
     background-color: lightblue;
     background-image: url(../cs315/img/background.jpg) ;
@@ -12,7 +12,7 @@
     margin-top: 0px;
     font-family: calibri,canadara,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         
-}
+/* }
 
 h1 {
 font-size: 30px;
@@ -22,9 +22,9 @@ text-align: center;
 margin-bottom: 0px;
   background-color: #a8a7e3;
 
-}
+} */
 
-h2 {
+/* h2 {
     margin-top: 0px;
     text-size-adjust: 10px;
 }
@@ -36,8 +36,8 @@ h5 {
      color: #080d11;
    
 }
-
-p {
+ */
+/* p {
     font-size: 30px;
     color: #080d11;
     font-family: sans-serif;
@@ -45,8 +45,8 @@ p {
     margin-bottom: 0px;
     background-color:#c8e3f8;
 }
-
-ol {
+ */
+/* ol {
     font-size: 20px;
     color: #080d11;
     font-family: sans-serif;
@@ -59,4 +59,4 @@ ol {
 label {
     display: block;
     width: 130px;
-  } */
+  } */ 
