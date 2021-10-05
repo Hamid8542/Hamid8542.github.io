@@ -95,3 +95,48 @@ div {
   overflow:auto;
   /* display:flow-root; */
 }  
+.mainDiv{
+  border:1px solid green;
+  padding:10px;
+  height:100%;
+}
+.articleDiv{
+  margin-top: 20px;
+  border: 5px solid rgb(168, 168, 160);
+  padding:10px;
+  float:left;
+  width:65%;
+}
+
+.sidebar{
+  margin-top: 20px;
+  border: 6px solid rgb(168, 168, 160);
+  padding:10px;
+  float:right;
+  width:30%;
+}
+.firstPage {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid blue;
+  height: 100px;
+}
+.secondPage {
+  background-color: white;
+  border: 1px solid blue;
+  height: 100px;
+}
+.thirdpage {
+  background-color: white;
+  border: 1px solid blue;
+  height: 100px;
+}
+.fourthPage {
+  background-color: white;
+  border: 1px solid blue;
+  height: 100px;
+}
+.fivthPage {
+  background-color: white;
+  border: 1px solid blue;
+  height: 100px;
+}
