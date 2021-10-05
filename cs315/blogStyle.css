@@ -1,0 +1,93 @@
+body {
+  background-color: lightblue;
+}
+
+
+h1{
+  text-align: center;
+}
+
+ /* Style the header */
+ .header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: blue;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: blue;
+  align-items:center;
+}
+
+.box {
+    
+  height: 700px;
+  margin-top: 0px;
+  border: 2px solid;
+  border: 2px solid blue;
+  padding:0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: opx;
+  background-color: burlywood;
+   /* background-image: url("../img/HamidBackground.jpg"); 
+   background-repeat: no-repeat; */
+  
+}
+div {
+  padding-top: 10px;
+  padding-right: 0;
+  padding-bottom: 10;
+  padding-left: 0;
+  text-align: center;
+}
+
+
+.container{
+  max-width: 10000px
+}
+.box1{
+  width: 600px;
+  height: 50px;
+  background: green;
+  display: table-cell;
+  vertical-align: top;
+
+}
+
+.box2{
+  width: 900px;
+  height: 50px;
+  background: yellow;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.box3{
+  width: 900px;
+  height: 50px;
+  background: red;
+  display: table-cell;
+  vertical-align: top;
+  color: white;
+}
