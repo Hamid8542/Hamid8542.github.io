@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial</title>
+
+    <link rel="stylesheet" href="mystyle.css">  
+ 
+</head>
+<!-- <h1>Background & Borders</h1> -->
+
+<h1>Belog </h1>
+      
+<div class="topnav">
+  <a href = "../cs315/html/assignments.html">CS315 Assignments </a>
+  <a  href = "../bussinessPage.html">My Business Page</a>
+  <a href = "https://www.hamidibrahim.net/">My Personal Page</a>
+  
+</div>
+<div>
+
+
+  <div class="container">
+    <div class="box1"><h1>Colomn 1</h1>
+      <div>
+        "Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, 
+        muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is 
+        the way to success." --Swami Vivekananda
+      </div>
+    </div>
+
+    <div class="box2"><h1>Colomn 2</h1>
+    <div>
+      "There are two types of people who will tell you that you cannot make a difference in this world: those who are 
+      afraid to try and those who are afraid you will succeed." --Ray Goforth
+
+    </div>
+    
+    </div>
+
+    <div class="box3"><h1>Colomn 3</h1>
+     <div>
+      "People who succeed have momentum. The more they succeed, the more they want to succeed, and the more they 
+      find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can 
+      even become a self-fulfilling prophecy." --Tony Robbins
+
+     </div>
+    </div>
+  </div>
+
+</div>
+<body>
+  
+</body>
+</html>
