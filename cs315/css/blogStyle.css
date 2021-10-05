@@ -91,3 +91,7 @@ div {
   vertical-align: top;
   color: white;
 }
+.wrapper{
+  overflow:auto;
+  /* display:flow-root; */
+}  
