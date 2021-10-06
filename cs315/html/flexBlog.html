@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+  
+.flex-container {
+        display: flex;
+        min-width: 640px;
+    }
+
+.hero {
+flex: 0 1 auto;
+}
+
+.content {
+flex: 0 1 auto;
+}
+
+.sidebar {
+    flex: 0 1 auto;
+ 
+}  
+
+.wrapper {
+    margin: auto;
+    max-width: 100rem;
+
+}
+
+
+main, header, section, aside, footer {
+    margin: 0;
+    padding: 20px;
+    border: 10px solid white;
+    color: #ffffff;
+}
+
+main {
+    background:burlywood;
+}
+
+.header {
+    background: #03a9f4;
+}
+
+.hero {
+    background: lightskyblue;
+}
+
+.content {
+    background: lightskyblue;
+}
+
+.sidebar {
+    border: 1px solid lightskyblue;
+    background: lightskyblue;
+}
+
+.footer {
+    border: 1px solid lightskyblue;
+    background: lightskyblue;
+}
+.nestedsidebar{
+    /* flex : 1 ; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    row-gap: 10px;
+    
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.smile{
+    display: flex;
+    flex-direction: row;
+}
+.wink{
+   display: inline;
+   flex-direction: row;
+}
+
+</style>
+
+<body>
+   <!-- Main Content -->
+   <main>
+    Blog
+
+    <!-- Header -->
+    <div>  </div>
+    <header class="header">
+        Header
+        <p>
+        Welcome    
+        </p>
+    </header>
+    
+    <div class="flex-container wrapper">
+
+        <section class="hero">
+            Inspirational Qoates
+            <p>
+        Inspirational Qoates
+        "Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success." --Swami Vivekananda
+        Avoid Negative Energy
+        "There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed." --Ray Goforth
+        Successful People
+        "People who succeed have momentum. The more they succeed, the more they want to succeed, and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy." --Tony Robbins
+
+            </p>
+        </section>
+
+        <!-- Content -->
+        <section class="content">
+             Avoid Negative Energy
+            <p>
+                "There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed." --Ray Goforth
+            </p>
+            <p>
+                Second Article - Successful People
+            </p>                
+        </section>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+           <div class ="nestedsidebar"></div>
+                <div class = "Smile">
+                    <button>Smile</button>
+                </div>
+                    <div class = "Laugh"> 
+                        <button>Laugh</button>
+                    </div>
+                        <div class = "Wink"> 
+                            <button>Wink</button>
+                        </div>
+                            <div class = "Shrug">
+                                <button>Shrug</button>
+                            </div>
+                                <div class ="Blush">
+                                    <button>Blush</button>
+                </div>
+           <div class="mainDiv">
+            <div class="articleDiv">
+                <div class="firstPage">
+                    Advertisemet
+                </div>
+                <div class="secondPage">
+                    Best Article of the year
+                </div>
+                <div class="thirdpage">
+                    Comming soon
+                </div>
+                <div class="fourthPage">
+                   Exam day
+                </div>
+                <div class="fivthPage">
+                    Your Next ...
+                </div>
+            </div>
+
+            <p>
+                "Sometimes beautiful things come into our lives out of nowhere. We can't always understand them, but we have to trust in them. I know you want to question everything, but sometimes it pays to just have a little faith." - Lauren Kate 
+            </p>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+       Never Give up              
+        <p>
+            "Sometimes beautiful things come into our lives out of nowhere. We can't always understand them, but we have to trust in them. I know you want to question everything, but sometimes it pays to just have a little faith." - Lauren Kate   
+        </p>
+    </footer>
+
+</main>
+
+ 
+</body>
+</html>
