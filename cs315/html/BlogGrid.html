@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .imgNew {
+        color: white;
+        width: 20px;
+        object-fit: contain;
+        margin-top: 15px;
+    }
+
+    .imgClass {
+        width: 40%;
+        object-fit: contain;
+    }
+
+    footer {
+        display: flex;
+        width:70%;
+        background-color: black;
+        flex-direction: column;
+        padding: 50px 100px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.8fr;
+        row-gap: 10px;
+        column-gap: 30px;
+        color: white;
+        justify-content: center;
+        color: gray;
+    }
+
+    .heading {
+        font-size: 20px;
+        color: white;
+    }
+
+    .aboutMeMargin {
+        margin-bottom: 40px;
+    }
+
+    .middleColumngrid {
+        display: grid;
+        column-gap: 20px;
+        align-content:start;
+        /* row-gap:10px; */
+        grid-template-columns: 20px 1fr;
+        font-size: 14px;
+        font-style: italic;
+    }
+    .lastColumn{
+        display:flex;
+        flex-wrap:wrap;
+        gap:5px;
+        align-content:flex-start;
+    }
+    .links{
+        display:flex;
+        justify-content:space-between;
+        color:white;
+    }
+    .emailBox{
+        height:40px;
+        width:90%;
+        color:white;
+        background-color:darkslategray; 
+        display:flex;
+        justify-content:space-between;
+        border-radius:40px;
+    }
+</style>
+
+<body>
+    <footer>
+        <div class="container">
+            <p class="heading">About Me</p>
+            <p class="heading">Latest Tweet</p>
+            <p class="heading">Instagram</p>
+            <div>
+                <p class="aboutMeMargin">Inspirational Qoates "Take up one idea. Make that one idea your 
+                    life--think of it, dream of it, live on that idea. Let the brain, 
+                    muscles, nerves, every part of your body, 
+                </p>
+                <p style="color:white;">
+                    <img src="../img/phone.png" style="width:20px;"> 322323
+                </p>
+                <p style="color:white;">
+                    <img src="../img/mail.png" style="width:20px;"> email.com
+                </p>
+                <div class="emailBox">
+                    <p style="padding:0px 20px;line-height: 10px;">Enter your e-mail</p>
+                    <div style="border-radius:40px;background-color: brown;color:white;">
+                        <p style="padding:0px 30px;line-height: 10px;"> Send</p>
+                    </div>
+                </div>
+            </div>
+            <div class="middleColumngrid">
+                <img src="twitter-white.png" class="imgNew">
+                <p> Most, if not all, social media platforms are a one-to-many model, meaning businesses, 
+                    brands and individuals connect with their entire audience at once. </p>
+                <img src="twitter-white.png" class="imgNew">
+                <p>As one of the largest one-to-many social media platforms, Twitter moves very quickly and 
+                    it’s pretty easy to get lost in the conversation. </p>
+                <img src="twitter-white.png" class="imgNew">
+                <p>DM simply stands for direct message, or messages sent via Twitter that are private between
+                    you and the recipient and do not appear on your feed.</p>
+            </div>
+            <div class="lastColumn">
+                <img src="../img/CN Tower.jpg" class="imgClass" />
+                <img src="../img/gerd.png" class="imgClass" />
+                <img src="../img/roses.jpg" class="imgClass" />
+                <img src="../img/smile.jpg" class="imgClass" />
+            </div>
+        </div>
+        <div style="border-top:1px solid #ffffff80">&nbsp;</div>
+        <div class="links">
+            <div style="display:flex;gap:15px;">
+                <label> Home</label>
+                <label> About</label>
+                <label> Our Works</label>
+                <label> Services</label>
+                <label> Blog</label>
+                <label> Contacts</label>
+            </div>
+            <div style="font-size: 18px;">
+                Colorlib
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
