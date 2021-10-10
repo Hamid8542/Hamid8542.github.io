@@ -1,0 +1,90 @@
+<style>
+    .imgNew {
+        color: white;
+        width: 20px;
+        object-fit: contain;
+        margin-top: 10px;
+    }
+    .imgClass {
+        width: 40%;
+        object-fit: contain;
+    }
+    header {
+        display: flex;
+        width:70%;
+        background-color:rgb(211, 202, 202);
+        flex-direction: column;
+        padding: 40px 100px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 30px;
+        color: white;
+        justify-content: center;
+        color: gray;
+    }
+    .heading {
+        font-size: 20px;
+        color:black;
+    }
+    .aboutMe {
+        margin-bottom: 40px;
+    }
+    .courses {
+        display: grid;
+        column-gap: 10px;
+        align-content:start;
+        /* row-gap:10px; */
+        grid-template-columns: 20px 1fr;
+        font-size: 12px;
+        color: gray;
+        /* font-style: italic; */
+    }
+    .currentCourse{
+        display:flex;
+        flex-wrap:wrap;
+        /* gap:2px; */
+        align-content:flex-start;
+        font-size: 12px;
+        color: gray;  
+    }
+    .footer{
+        display:flex;
+        justify-content:space-between;
+        color:white;
+    }
+    /* .emailBox{
+        display:flex;
+        height:40px;
+        width:90%;
+        color:white;
+        background-color:darkslategray; 
+        justify-content:space-between;
+        border-radius:40px;
+    } */
+.myProfile{
+    display: flex;
+    max-width:100px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.welcome{
+    display: flex;
+    width: 86%;
+    height: 40px;
+    border: #008000;
+    background-color:lightskyblue ;
+    justify-content: center;
+    line-height: 40px;  
+    text-transform:uppercase;
+    letter-spacing: 10px; 
+    font-style: italic;
+}
+
+    /* .instructor{
+        text-transform: capitalize;padding-left: 10px;
+    } */
+</style>
+/*  */
