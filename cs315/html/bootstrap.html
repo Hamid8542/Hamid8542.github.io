@@ -22,7 +22,7 @@
         color: white;
         /* justify-content:flex-start; */
         color: gray;
-        margin:20px;
+        margin: 20px;
     }
 
     .container2 {
@@ -36,11 +36,13 @@
     
     }
     .column1{
-      display: grid;
+      /* display: grid;
       background-color: antiquewhite;
       margin: 10px;
       font-size: larger;
-      font-weight: bold;
+      font-weight: bold; */
+      background-color: rgb(246, 243, 243);
+      padding:10px;
     }
     .column2{
         display: grid;
@@ -63,13 +65,31 @@
     font-weight: bold;
    } 
   .images{
-      margin-top: 20px;
+      align-content: flex-start;
+      max-width: 100%;
+      object-fit: contain;
+  }
+ .myDiv{
+   border: 1px solid ;
+ }
+ .myClass{
+  border: 1px solid lightgray;
+    width: 25%;
+    padding: 3px;
+    border-radius: 2px;
+    height: 150px;
+ }
+  .images{
+    margin-top: 20px;
     margin-left: 3px;
     display: flex;
     gap: 10px;
   }
- 
-   
+  /* .leftContent{
+    background-color: rgb(246, 243, 243);
+    padding:10px;
+} */
+
 </style>
 
 <body>
@@ -84,6 +104,7 @@
                   </ul>
             </div>                 
             </div>
+            
         <div><p class = "column2"> Uh oh! Have you had daily dose of veggies today??</p>   
                     <div class= "wild">Wild & Waacky Vegetables?? </div>         
                 <p>Create 5x5 grid with 2 space n small screens and 3x space in larger 
@@ -97,9 +118,9 @@
 
                 <label class ="somediseas">Some Diseases</label>
 
-            <div class="container">
+                 <div class="container myDiv"></div> 
             
-                   <div class="row justify-content-md-center myDiv ">
+                  <div class="row justify-content-md-center myDiv ">
                     <div class="col-6" style =" border:1px solid ;"><b>Veggie</b></div>
                     <div class="col-6" ><b>Disease</b></div>
                  </div>
@@ -110,34 +131,19 @@
                   <div class="row justify-content-md-center myDiv ">
                     <div class="col-6" style =" border:1px solid ;">Carrots</div>
                     <div class="col-6">Carrots</div>
-                      
                   </div>
-            
-
-               <div class="container">
-                       
-             <div class="images">
-
-            <div class="imgDiv">
-                <img src="carrot.jpg" />
-            </div>
-
-            <div class="imgDiv">
-                <img src="Asparagus.jpg" />
-            </div>
-
-            <div class="imgDiv img3">
-                <img src="beets.jpg" />
-            </div>
-
-            <div class="imgDiv img4">
-                <img src="Asparagus.jpg" />
-            </div>
-
-            </div> 
-                    
+             
+           
+                  <div class="images">
+                   
+                        <img src="Asparagus.jpg"  class="myClass">                                  
+                        <img src="carrot.jpg" class="myClass">
+                        <img src="carrot.jpg" class="myClass">
+                        <img src="Asparagus.jpg"  class="myClass">
+           
+                     
           </div>  
-            </div>
+  
             <div class="container2">
                 <div> 
                     <p class="secCol">Really Informative Info</p>
