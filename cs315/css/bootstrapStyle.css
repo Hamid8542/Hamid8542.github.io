@@ -1,0 +1,52 @@
+  .container {
+        display: grid;
+        grid-template-columns: 0.25fr 1fr ;
+        row-gap: 5px;
+        column-gap: 10px;
+        color: white;
+        /* justify-content:flex-start; */
+        color: gray;
+    }
+
+    .container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        row-gap: 5px;
+        column-gap: 20px;
+        color: white;
+        /* justify-content:flex-start; */
+        color: gray;
+    
+    }
+    .column1{
+      display: grid;
+      background-color: antiquewhite;
+      margin: 10px;
+      font-size: larger;
+      font-weight: bold;
+    }
+    .column2{
+        display: grid;
+        background-color: pink;
+        color: tomato;
+        padding: 10px;
+     
+    }
+    .somediseas{
+      font-size: larger;
+      font-weight: bold;
+       
+    }
+    .secCol{
+      font-size: larger;
+      font-weight: bold;
+    }
+   .wild{
+    font-size: larger;
+    font-weight: bold;
+   } 
+  .images{
+      align-content: flex-start;
+      max-width: 100%;
+      object-fit: contain;
+  }
