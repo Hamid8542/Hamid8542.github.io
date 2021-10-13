@@ -70,99 +70,182 @@
 }
 
 
+</head>
+<style>
+  .container {
+
+    width: 250px;
+    height: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    /* background-color:white ;
+    border: 1px solid gray;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;  */
+
+  }
+
+  .form-label {
+    /* padding: auto; */
+
+  }
+
+  .mb-3 {
+    display: inline-flex;
+    gap: 5px;
+  }
+
+  .form-check {
+    display: inline-flex;
+    gap: 20px;
+
+  }
+
+  .form-label {}
+
+  .btn-warning {
+    background-color: burlywood;
+    color: black;
+    width: 200px;
+
+  }
+
+  .myDiv {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .form-select {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-check-label {
+
+    
+  }
 </style>
+
+<script>
+  (function () {
+    'use strict'
+    window.addEventListener('load', function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('register', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    }, false);
+  })()
+</script>
+
 <body>
 
-<div class="container">
+  <div class="container">
+    <div class="position-relative bg-prmary border border-warning">
+
+    </div>
     <form>
-       <div class ="myDiv">
+      <div class="myDiv">
 
+        <h3 style="text-align: center;padding-bottom: 10px;"> Responsive Registration Form</h3>
 
-        <h3><p> <span class="glyphicon glyphicon-user"></span></p>Responsive Registration Form</h3>
-        <div class="mb-3">
-          
-          <label for="InputEmail1" class="form-label"></label>
-          <input type="email" class="form-control" id="InputEmail1" placeholder="Email "emailHelp">
-          <div id="emailHelp" class="form-text"></div>
+        <div class="mb-3 col-12">
+
+          <label class="glyphicon glyphicon" for="InputEmail1" class="form-label"></label>
+          <input type="email" class="form-control" id="InputEmail1" placeholder="Email ">
         </div>
 
-        <div class="mb-3">
-          <label for="InputPassword1" class="form-label"></label>
+        <div class="mb-3 col-12">
+          <label class="glyphicon glyphicon" for="InputPassword1" class="form-label"></label>
           <input type="password" class="form-control" id="InputPassword1" placeholder="Password ">
         </div>
 
-        <div class="mb-3">
-            <label for="InputPassword1" class="form-label"></label>
-            <input type="password" class="form-control" id="InputPassword1" placeholder="Re-type Password">
-          </div>
-
-          <div class="mb-3">
-         
-            <label for="Inputfirstname" class="form-label"></label>
-            <input type="firstname" class="form-control" id="Inputfirstname" placeholder="First Name">
-            <label for="Inputlastname" class="form-label"></label>
-            <input type="lastname" class="form-control" id="Inputlastname" placeholder="Last Name">
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-             Male
-            </label>
-          </div>
-
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-            <label class="form-check-label" for="flexRadioDefault2">
-             Female
-            </label>
-          </div>
-          
-           <div>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Select a country</option>
-                <option value="1">United States</option>
-                <option value="2">Canada</option>
-                <option value="3">Germany</option>
-                <option value="3">England</option>
-                <option value="3">Russia</option>
-                <option value="3">China</option>
-                <option value="3">France</option>
-                <option value="3">Mexico</option>
-                <option value="3">Japan</option>
-              </select>
-          </div> 
-
-          <div class="form-check d-flex justify-content-center mb-5">
-            <input
-              class="form-check-input me-2"
-              type="checkbox"
-              value=""
-              id="form2Example3c"
-            />
-            <label class="form-check-label" for="form2Example3" style="font-size:10px;">
-              I agree with terms and conditions
-            </label>
-          </div>
-
-          <div class="form-check d-flex justify-content-center mb-5">
-            <input
-              class="form-check-input me-2"
-              type="checkbox"
-              value=""
-              id="form2Example3c"
-            />
-            <label class="form-check-label" for="form2Example3" style="font-size:10px;">
-              I want to receive the newsletters
-            </label>
-          </div>
-         
-        <div>
-            <button type="register" class="btn btn-primary">Register</button>
+        <div class="mb-3 col-12">
+          <label class="glyphicon glyphicon" for="InputPassword1" class="form-label"></label>
+          <input type="password" class="form-control" id="InputPassword1" placeholder="Re-type Password">
         </div>
-       
-      </form>
-    </div>
-    </div>
+
+        <div class="mb-3 col-12">
+
+          <label class="glyphicon glyphicon-user" for="Inputfirstname" class="form-label"></label>
+          <input type="firstname" class="form-control" id="Inputfirstname" placeholder="First Name">
+
+
+          <label class="glyphicon glyphicon-user" for="Inputlastname" class="form-label"></label>
+          <input type="lastname" class="form-control" id="Inputlastname" placeholder="Last Name">
+        </div>
+
+        <div class="myCon col-12" style="font-size:10px">
+
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+
+          <input class="form-check-input" style="padding-left: 10px;" type="radio" name="flexRadioDefault"
+            id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+      
+        </div>
+        <div>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Select a country</option>
+            <option value="1">United States</option>
+            <option value="2">Canada</option>
+            <option value="3">Germany</option>
+            <option value="3">England</option>
+            <option value="3">Russia</option>
+            <option value="3">China</option>
+            <option value="3">France</option>
+            <option value="3">Mexico</option>
+            <option value="3">Japan</option>
+          </select>
+        </div>
+
+        <div class="form-check d-flex justify-content-center mb-5">
+          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+          <label class="form-check-label" for="form2Example3" style="font-size:10px;">
+            I agree with terms and conditions
+          </label>
+        </div>
+
+        <div class="form-check d-flex justify-content-center mb-5">
+          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+          <label class="form-check-label" for="form2Example3" style="font-size:10px;">
+            I want to receive the newsletters
+          </label>
+        </div>
+        
+        <div class="mb-3 col-12">
+          <button type="button" class="btn btn-warning">Register</button>
+        </div>
+
+    </form>
+  </div>
+  </div>
+
+
 </body>
+
 </html>
