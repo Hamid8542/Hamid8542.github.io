@@ -42,8 +42,7 @@
         grid-template-columns: 20px 1fr;
         font-size: 12px;
         color: gray;
-        
-        /* font-style: italic; */
+       
     }
     .currentCourse{
         display:flex;
@@ -58,21 +57,13 @@
         justify-content:space-between;
         color:white;
     }
-    /* .emailBox{
-        display:flex;
-        height:40px;
-        width:90%;
-        color:white;
-        background-color:darkslategray; 
-        justify-content:space-between;
-        border-radius:40px;
-    } */
+  
 .myProfile{
     display: flex;
     max-width:100px;
     object-fit: contain;
     border-radius: 50%;
-/*     height:40px; */
+
 }
 .welcome{
     display: flex;
