@@ -20,23 +20,26 @@
     function submit() {
         let email = document.getElementById("email").value;
         let pwd = document.getElementById("password").value;
+        
+         if (email.value === '' || email.value == null) {
+            messages.push('Eamil is required')            
+            window.location.href = "../html/error_message.html";
+        }
+        
+       else if (email !== 'manager@email.com' && pwd !== 'password' || email !== 'email' && pwd !== 'pwd') {
+            window.location.href = "../html/errorMessage.html";
 
-        if (email == 'manager@email.com' && pwd == 'password') {
+       else if(email == 'manager@email.com' && pwd == 'password') {
             window.location.href = "../html/Inventory.html";
         }
 
-        if (email == 'email' && pwd == 'pwd') {
+        else (email == 'email' && pwd == 'pwd') {
             window.location.href = "../html/main.html";
         }
 
-        if (email.value === '' || email.value == null) {
-            messages.push('Eamil is required')
-            
-            window.location.href = "../html/error_message.html";
-        }
+       
 
-        if (email !== 'manager@email.com' && pwd !== 'password' && email !== 'email' && pwd !== 'pwd') {
-            window.location.href = "../html/errorMessage.html";
+      
 
         // if (password.value.length <= 6) {
         //     messages.push('Password must be longer than 6 characters')
@@ -67,22 +70,9 @@
             <input type="text" id="password" required />
         </div>
         <button style="justify-self:center;" onclick="submit();">Login</button>
-        <div style="justify-self:center;"><a href="signup.html">New User? SignUp</a></div>
+        <div style="justify-self:center;"><a href="../html/signup.html">New User? SignUp</a></div>
     </div>
-    <div>
-        <h4>Project Tasks</h4>
-        Two Roles
-        <ul>
-            <li>Manager</li>
-            <li>Customer</li>
-        </ul>
-        <ol>
-            <li>Check the Username and password, if correct-> let them Login</li>
-            <li>If Username/password is incorrect -> Show the Validation Message.</li>
-            <li>If User is Manager-> login click should take to Inventory Page</li>
-            <li>If User is Customer->login click should take to main page(or productlist directly)</li>
-        </ol>
-    </div>
+   
    
         <script></script>
        
