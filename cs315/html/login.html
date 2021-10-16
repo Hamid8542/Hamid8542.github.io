@@ -24,10 +24,10 @@
          if(email == 'manager@email.com' && pwd == 'password') {
             window.location.href = "../html/Inventory.html";
         }
-          (email == 'email' && pwd == 'pwd') {
+        else if(email == 'email' && pwd == 'pwd') {
             window.location.href = "../html/main.html";
         }
-         if (email.value === '' || email.value == null) {
+        else if(email.value === '' || email.value == null) {
             messages.push('Eamil is required')   
             window.location.href = "../html/error_message.html";
         }
