@@ -1,93 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- <script defer src="loginScript.js"></script> -->
-<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="login.css">
+
 <head>
+
 </head>
 
 <script>
 
-// const email = document.getElementById('email');
-// const password = document.getElementById('password');
-const form = document.getElementById('form');
-const errorElement = document.getElementById('error');
+    // const email = document.getElementById('email');
+    // const password = document.getElementById('password');
+    const form = document.getElementById('form');
+    const errorElement = document.getElementById('error');
 
-let customerEmails = [{ email: "email", password: "pwd" }];
-        let messages = [];
-        function submit() {
-            let email = document.getElementById("email").value;
-            let pwd = document.getElementById("password").value;
-            if (email == 'manager@email.com'){
-                window.location.href = "inventory.html";
-            }
-             if(email.value === '' || email.value == null) {
-            messages.push('Eamil is required')
+    let customerEmails = [{ email: "email", password: "pwd" }];
+    let manager = [{ email: "manager@email.com", password: "password" }];
+    let messages = [];
+    function submit() {
+        let email = document.getElementById("email").value;
+        let pwd = document.getElementById("password").value;
 
+        if (email == 'manager@email.com' && pwd == 'password') {
+            window.location.href = "Inventory.html";
+        }
 
-            // else
-            //     window.location.href = "main.html";
+        if (email == 'email' && pwd == 'pwd') {
+            window.location.href = "main.html";
         }
 
         if (email.value === '' || email.value == null) {
             messages.push('Eamil is required')
+            
+            window.location.href = "error_message.html";
         }
-
-        if (password.value.length <= 6) {
-            messages.push('Password must be longer than 6 characters')
-        }
-
-        if (password.value.length >= 20) {
-            messages.push('Password must be less than 20 characters')
-        }
-
-        if (password.value === 'password') {
-            messages.push('Password can not be password')
-        }
-
-        if (messages.length > 0) {
-            e.preventDefault()
-            errorElement.innerText = messages.join(',')
-        }
-
-</script>
-
-<body>
-    <div class="main">
-        <img src="../img/login.jpg" class="roundImage" />
-        <div class="innerDiv">
-            <label>Email</label>
-            <input type="text" id="email" required/>
-            <label>Password</label>
-            <input type="text" id="password" required/>
-        </div>
-        <button style="justify-self:center;" onclick="submit();">Login</button>
-        <div style="justify-self:center;"><a href="../html/signup.html">New User? SignUp</a></div>
-    </div>
-    <div>
-        <h4>Project Tasks</h4>
-        Two Roles
-        <ul>
-            <li>Manager</li>
-            <li>Customer</li>
-        </ul>
-        <ol>
-            <li>Check the Username and password, if correct-> let them Login</li>
-            <li>If Username/password is incorrect -> Show the Validation Message.</li>
-            <li>If User is Manager-> login click should take to Inventory Page</li>
-            <li>If User is Customer->login click should take to main page(or productlist directly)</li>
-        </ol>
-    </div>
-    <!-- <script> -->
-        <!-- // let customerEmails = [{ email: "email", password: "pwd" }];
-        // let messages = [];
-        // function submit() {
-        //     let email = document.getElementById("email").value;
-        //     let pwd = document.getElementById("password").value;
-        //     if (email == 'manager@email.com')
-        //         window.location.href = "inventory.html";
-        //     else
-        //         window.location.href = "main.html";
-        // }
 
         // if (email.value === '' || email.value == null) {
         //     messages.push('Eamil is required')
@@ -108,6 +54,40 @@ let customerEmails = [{ email: "email", password: "pwd" }];
         // if (messages.length > 0) {
         //     e.preventDefault()
         //     errorElement.innerText = messages.join(',')
-        // } -->
-</body>  
-</html>
+        // }
+    }
+</script>
+
+<body>
+    <div class="main">
+        <img src="login.jpg" class="roundImage" />
+        <div class="innerDiv">
+            <label>Email</label>
+            <input type="text" id="email" required />
+            <label>Password</label>
+            <input type="text" id="password" required />
+        </div>
+        <button style="justify-self:center;" onclick="submit();">Login</button>
+        <div style="justify-self:center;"><a href="signup.html">New User? SignUp</a></div>
+    </div>
+    <div>
+        <h4>Project Tasks</h4>
+        Two Roles
+        <ul>
+            <li>Manager</li>
+            <li>Customer</li>
+        </ul>
+        <ol>
+            <li>Check the Username and password, if correct-> let them Login</li>
+            <li>If Username/password is incorrect -> Show the Validation Message.</li>
+            <li>If User is Manager-> login click should take to Inventory Page</li>
+            <li>If User is Customer->login click should take to main page(or productlist directly)</li>
+        </ol>
+    </div>
+   
+        <script></script>
+       
+        
+</body >
+
+</html >
