@@ -1,0 +1,82 @@
+
+    .imgNew {
+        color: white;
+        max-width: 100%;
+        object-fit: contain;
+        margin-top: 10px;
+        width:20px;
+        height:20px;
+    }
+    .imgClass {
+        width: 40%;
+        object-fit: contain;
+    }
+    header {
+        display: flex;
+        width:80%;
+        background-color:black;
+        flex-direction: column;
+        padding: 40px 100px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns:auto auto auto;
+        row-gap: 10px;
+        column-gap: 30px;
+       
+        justify-content: center;
+        color: white;
+    }
+    .heading {
+        font-size: 20px;
+        color:white;
+    }
+    .aboutMe {
+        margin-bottom: 40px;
+    }
+    .courses {
+        display: grid;
+        column-gap: 10px;
+        align-content:start;
+        /* row-gap:10px; */
+        grid-template-columns: 20px 1fr;
+        font-size: 12px;
+        color: white;
+       
+    }
+    .currentCourse{
+        display:flex;
+        flex-wrap:wrap;
+        /* gap:2px; */
+        align-content:flex-start;
+        font-size: 12px;
+        color:white;  
+    }
+    .footer{
+        display:flex;
+        justify-content:space-between;
+        color:white;
+    }
+  
+.myProfile{
+    display: flex;
+    max-width:100px;
+    object-fit: contain;
+    border-radius: 50%;
+
+}
+.welcome{
+    display: flex;
+    width: 86%;
+    height: 40px;
+    border: #008000;
+    background-color:black ;
+    justify-content: center;
+    line-height: 40px;  
+    text-transform:uppercase;
+    letter-spacing: 10px; 
+    font-style: italic;
+    color: white;
+}
+
+  
