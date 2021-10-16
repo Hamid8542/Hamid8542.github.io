@@ -19,6 +19,10 @@
       <input type="number" value="" id="quantity" />
     </p>
     <p>
+      Price: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      <input type="number" value="" id="price" />
+    </p>
+    <p>
       <input type="submit" value="Add" class="addButton" onclick="add()" />
     </p>
     <input type="submit" value="filter" onclick="filter()" />
@@ -31,6 +35,7 @@
       <th>Product Name</th>
       <th>Category</th>
       <th>Quantity</th>
+       <th>Price</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -38,13 +43,15 @@
   <script>
     let array = [];
     let index = 0;
-
+    let idsOfInputs = ["itemName", "category", "quantity","price"];
+    
     function add() {
       index++;
       let item = {
         id: index, name: document.getElementById("itemName").value,
         category: document.getElementById("category").value,
-        quantity: document.getElementById("quantity").value
+        quantity: document.getElementById("quantity").value,
+        price: document.getElementById("price").value
       };
       array.push(item);
 
@@ -63,6 +70,10 @@
       let quantityTd = document.createElement("td");
       quantityTd.innerHTML = document.getElementById("quantity").value;
       tr.append(quantityTd);
+      
+      let priceTd = document.createElement("td");
+      priceTd.innerHTML = document.getElementById("price").value;
+      tr.append(quantityTd);
 
       //<tr> <td><button>Edit</button></td>
       let editTd = document.createElement("td");
@@ -79,6 +90,7 @@
         document.getElementById("itemName").value = childNodes[0].innerHTML;
         document.getElementById("category").value = childNodes[1].innerHTML;
         document.getElementById("quantity").value = childNodes[2].innerHTML;
+        document.getElementById("price").value = childNodes[2].innerHTML;
 
         let myId = this.getAttribute("myId");
         array.forEach(function (item) {
@@ -86,6 +98,7 @@
             item.name = document.getElementById("itemName").value;
             item.category = document.getElementById("category").value;
             item.quantity = document.getElementById("category").value;
+            item.price = document.getElementById("price").value;
           }
         })
 
