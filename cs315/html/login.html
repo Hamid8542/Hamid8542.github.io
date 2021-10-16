@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <script defer src="loginScript.js"></script> -->
+
+<head>
+
+</head>
+
+<style>
+
+    .roundImage {
+        border-radius: 50%;
+        width: 100px;
+        object-fit: cover;
+        height: 100px;
+        justify-self: center;
+    }
+
+    .main {
+        display: grid;
+        /* flex-direction:column; */
+        margin: auto;
+        gap: 15px;
+        width: 300px;
+        font-size: 20px;
+        margin-top: 20px;
+        /* width:40%; */
+        border: 1px solid blue;
+        padding: 15px;
+    }
+
+    .innerDiv {
+        display: grid;
+        /* border:1px solid; */
+        grid-template-columns: 1fr 2fr;
+        gap: 15px;
+        justify-content: center;
+    }
+</style>
+
+<script>
+
+// const email = document.getElementById('email');
+// const password = document.getElementById('password');
+const form = document.getElementById('form');
+const errorElement = document.getElementById('error');
+
+let customerEmails = [{ email: "email", password: "pwd" }];
+        let messages = [];
+        function submit() {
+            let email = document.getElementById("email").value;
+            let pwd = document.getElementById("password").value;
+            if (email == 'manager@email.com'){
+                window.location.href = "inventory.html";
+            }
+             if(email.value === '' || email.value == null) {
+            messages.push('Eamil is required')
+
+
+            // else
+            //     window.location.href = "main.html";
+        }
+
+        if (email.value === '' || email.value == null) {
+            messages.push('Eamil is required')
+        }
+
+        if (password.value.length <= 6) {
+            messages.push('Password must be longer than 6 characters')
+        }
+
+        if (password.value.length >= 20) {
+            messages.push('Password must be less than 20 characters')
+        }
+
+        if (password.value === 'password') {
+            messages.push('Password can not be password')
+        }
+
+        if (messages.length > 0) {
+            e.preventDefault()
+            errorElement.innerText = messages.join(',')
+        }
+
+</script>
+
+<body>
+    <div class="main">
+        <img src="login.jpg" class="roundImage" />
+        <div class="innerDiv">
+            <label>Email</label>
+            <input type="text" id="email" required/>
+            <label>Password</label>
+            <input type="text" id="password" required/>
+        </div>
+        <button style="justify-self:center;" onclick="submit();">Login</button>
+        <div style="justify-self:center;"><a href="signup.html">New User? SignUp</a></div>
+    </div>
+    <div>
+        <h4>Project Tasks</h4>
+        Two Roles
+        <ul>
+            <li>Manager</li>
+            <li>Customer</li>
+        </ul>
+        <ol>
+            <li>Check the Username and password, if correct-> let them Login</li>
+            <li>If Username/password is incorrect -> Show the Validation Message.</li>
+            <li>If User is Manager-> login click should take to Inventory Page</li>
+            <li>If User is Customer->login click should take to main page(or productlist directly)</li>
+        </ol>
+    </div>
+    <!-- <script> -->
+        <!-- // let customerEmails = [{ email: "email", password: "pwd" }];
+        // let messages = [];
+        // function submit() {
+        //     let email = document.getElementById("email").value;
+        //     let pwd = document.getElementById("password").value;
+        //     if (email == 'manager@email.com')
+        //         window.location.href = "inventory.html";
+        //     else
+        //         window.location.href = "main.html";
+        // }
+
+        // if (email.value === '' || email.value == null) {
+        //     messages.push('Eamil is required')
+        // }
+
+        // if (password.value.length <= 6) {
+        //     messages.push('Password must be longer than 6 characters')
+        // }
+
+        // if (password.value.length >= 20) {
+        //     messages.push('Password must be less than 20 characters')
+        // }
+
+        // if (password.value === 'password') {
+        //     messages.push('Password can not be password')
+        // }
+
+        // if (messages.length > 0) {
+        //     e.preventDefault()
+        //     errorElement.innerText = messages.join(',')
+        // } -->
+</body>  
+</html>
