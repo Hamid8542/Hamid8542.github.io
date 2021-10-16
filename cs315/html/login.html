@@ -22,22 +22,21 @@
         let pwd = document.getElementById("password").value;
 
         if (email == 'manager@email.com' && pwd == 'password') {
-            window.location.href = "Inventory.html";
+            window.location.href = "../html/Inventory.html";
         }
 
         if (email == 'email' && pwd == 'pwd') {
-            window.location.href = "main.html";
+            window.location.href = "../html/main.html";
         }
 
         if (email.value === '' || email.value == null) {
             messages.push('Eamil is required')
             
-            window.location.href = "error_message.html";
+            window.location.href = "../html/error_message.html";
         }
 
-        // if (email.value === '' || email.value == null) {
-        //     messages.push('Eamil is required')
-        // }
+        if (email !== 'manager@email.com' && pwd !== 'password' && email !== 'email' && pwd !== 'pwd') {
+            window.location.href = "../html/errorMessage.html";
 
         // if (password.value.length <= 6) {
         //     messages.push('Password must be longer than 6 characters')
