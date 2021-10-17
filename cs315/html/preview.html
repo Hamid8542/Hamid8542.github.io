@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Page</title>
+
+</head>
+<style>
+.myDiv{
+  
+    margin: auto;
+    gap: 15px;
+    width: 300px;
+    font-size: 15px;
+    margin-top: 20px;
+    /* width:40%; */
+    border: 1px solid rgb(83, 83, 248);
+    background-color: rgb(153, 209, 245);
+    padding: 15px;
+  
+}
+
+</style>
+
+
+<body>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class ="myDiv">
+            <lable>Email</lable>
+            <br></br>
+            <div>
+                <button onclick="edit()" style="background-color: rgb(235, 154, 116);width:170px; height:30px; border-radius: 5px;font-size: 20px;">Edit</button>
+                <br></br>
+                <button onclick="login()" style="background-color: rgb(235, 154, 116);width:170px; height:30px; border-radius: 5px;font-size: 20px;">Next</button><br></br>
+            </div>
+        
+    <script>
+                const urlParams=new URLSearchParams(window.location.search);
+                const myParms=urlParams.get('email');
+                // console.log(urlParams.get('email'));
+                let lable=document.getElementsByTagName("lable")[0];
+                lable.innerHTML=" Here are the  information you entered: email-: "  + urlParams.get('email')+ " Password: "+urlParams.get('password')+" First-Name: "+urlParams.get('fname')+
+                    " Last-Name: "+urlParams.get('lname')+" gender-male: "+urlParams.get('male')+" gender-female: "+urlParams.get('female')+" I agree on terms and conditions: "+ urlParams.get('iAgree')+ " " +
+                    " if your information is not correct edit else continue with next :  " 
+                   
+                
+            function edit(){
+                window.location.href="signup2.html";
+            }
+                function login(){
+                window.location.href="login.html";
+                
+                }
+
+    </script>
+
+</div> 
+    </body>
+</html>
