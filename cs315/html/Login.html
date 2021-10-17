@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+      .roundImage {
+          border-radius:50%;
+          width:100px;
+          object-fit:cover;
+          height:100px;
+          justify-self:center;
+      }
+      .main{
+        display:grid;
+        margin:auto;
+        gap:15px;
+        width:400px;
+        height:300px;
+        font-size:20px;
+        margin-top:20px;
+        padding:15px;
+      }
+      .innerDiv{
+          display:grid;
+          grid-template-columns:1fr 2fr;
+          gap:15px;
+          justify-content:center;
+      }
+      
+  </style>
+</head>
+<body>
+    <div class ="main">
+        <img src ="https://1920x1080hdwallpapers.com/image/201612/brands/7322/amazon-symbol.jpg" class="roundImage" style="max-width: 100%px; object-fit: cover";/>
+        <div class="innerDiv">
+            <label>Email</label>
+            <input type="text" id="email"/>
+            <label>Password</label>
+            <input type="text" id="password"/>
+        </div>
+        <button style="justify-self:center; background-color: rgb(185, 185, 250);border-radius:10px;font-size: 15px; width:120px;" onclick="login();">Login</button>
+        <div style="justify-self:center;"><a href="signup.html" >New User? SignUp</a></div>
+    </div>
+    <script>
+        function login(){
+            let email = document.getElementById("email").value;
+            let pwd = document.getElementById("password").value;
+             
+            if(email =="manager@email.com") {
+                if((pwd.match(/[A-Z]/g) && 
+                pwd.match(/[0-9]/g) && 
+                pwd.match(/[!@#$%^&*]/g))) {
+                    if( pwd.length>=8 && pwd.length<=14){
+                        window.location.href="inventory.html";
+                    }
+                    else{
+                        alert("The password must be 8 to 14 character");
+                    }
+                 }
+                else if(pwd==""){
+                        alert("Please enter passwod!");
+                    }
+                    else {
+                alert("Invalid input!The password must contain atleast one number, one special character and one uper-case letter");
+                }
+                 
+                }
+
+            else if(email=="custemer1@email.com" || email=="custemer2@email.com" || email=="custemer3@email.com"){
+                    if((pwd.match(/[A-Z]/g) && 
+                        pwd.match(/[0-9]/g) && 
+                        pwd.match(/[!@#$%^&*]/g)))
+                    {
+                        if( pwd.length>=8 && pwd.length<=14){
+                            window.location.href="MainA.html";
+                        }
+                        else{
+                        alert("The password must be 8 to 14 character");
+                         }
+                    }
+                    else if(pwd.length==0){
+                        alert("Please enter passwod!");
+                    }
+                    else {
+                             alert("Invalid input!The password must contain atleast one number, one special character and one uper-case letter");
+                    }
+                }
+            else if(email=="" ){
+                alert("Please enter login information!");
+            }
+            
+            else if(!(email=="custemer1@email.com" || email=="custemer2@email.com" || email=="custemer3@email.com")
+                    ){
+                        alert("invalid e-mail");
+                    }
+               
+            
+        }
+    </script>
+</body>
+</html>
