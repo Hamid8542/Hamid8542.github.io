@@ -4,151 +4,193 @@
   <link rel="stylesheet" href="/cs315/css/myStyle.css">
 </head>
 <body>
-  <h1>Inventory</h1>
-  <div>
-    <p>
-      Item Name: &nbsp; &nbsp; &nbsp;
-      <input type="text" value="" id="itemName" />
-    </p>
-    <p>
-      Item Category: &nbsp;
-      <input type="text" value="" id="category" />
-    </p>
-    <p>
-      Quantity: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-      <input type="number" value="" id="quantity" />
-    </p>
-    <p>
-      Price: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <input type="number" value="" id="price" />
-    </p>
-    <p>
-      <input type="submit" value="Add" class="addButton" onclick="add()" />
-    </p>
-    <input type="submit" value="filter" onclick="filter()" />
-    <input type="submit" value="Clear Filter" onclick="clearFilter()" />
-    <input type="submit" value="Rating" onclick="rating()" />
-    <br/>
-  </div>
-  <table id="items">
-    <tr>
-      <th>Product Name</th>
-      <th>Category</th>
-      <th>Quantity</th>
-       <th>Price</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </table>
-  <script>
-    let array = [];
-    let index = 0;
-    let idsOfInputs = ["itemName", "category", "quantity","price"];
-    
-    function add() {
-      index++;
-      let item = {
-        id: index, name: document.getElementById("itemName").value,
-        category: document.getElementById("category").value,
-        quantity: document.getElementById("quantity").value,
-        price: document.getElementById("price").value
-      };
-      array.push(item);
+   <div class = "container">
+        <div class="Inv">
+            <h1 class="Inv" style="padding-left: 300px ;">Inventory</h1>
+        </div>
+  
+    <div>
+        <p>
+            Item Name: &nbsp; &nbsp; &nbsp;
+            <input type="text" value="" id="itemName" />
+        </p>
+        <p>
+            Item Category: &nbsp;
+            <input type="text" value="" id="category" />
+        </p>
+        <p>
+            Quantity: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            <input type="text" value="" id="quantity" />
+        </p>
 
+        <p>
+            Price: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+            <input type="text" value="" id="price" />
+        </p>
 
-      let items = document.getElementById("items");
-      let tr = document.createElement("tr");
-      items.append(tr);
-      let nameTd = document.createElement("td");
-      nameTd.innerHTML = document.getElementById("itemName").value;
-      tr.append(nameTd);
+        <p>
+            Rating: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+            <input type="text" value="" id="rating" />
+        </p>
 
-      let categoryTd = document.createElement("td");
-      categoryTd.innerHTML = document.getElementById("category").value;
-      tr.append(categoryTd);
+        <label id="mode" hidden></label>
+        <p>
+            <input type="submit" value="Add" class="addButton" onclick="add()" />
+        </p>
+        <input type="submit" value="filter" onclick="filter()" />
+        <input type="submit" value="Clear Filter" onclick="clearFilter()" />
+        <input type="submit" value="Rating" onclick="rating()" />
+        <br />
+    </div>
+    <table id="items">
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </table>
 
-      let quantityTd = document.createElement("td");
-      quantityTd.innerHTML = document.getElementById("quantity").value;
-      tr.append(quantityTd);
-      
-      let priceTd = document.createElement("td");
-      priceTd.innerHTML = document.getElementById("price").value;
-      tr.append(priceTd);
+    <div>
+        <h4>Project Tasks</h4>
+        <i> Inventory Page Assignment.</i>
+        <ul>
+            <li>
+                <b>Item properties</b>
+                Ratings,
+                Brand,
+                Price,
+                Department/Category,
+                name,
+                Description,
+                id
+            </li>
+        </ul>
+    </div>
 
-      //<tr> <td><button>Edit</button></td>
-      let editTd = document.createElement("td");
-      let button = document.createElement("button");
-      button.innerHTML = "Edit";
-      button.setAttribute("myId", index);
-      button.onclick = function () {
-        console.log(this)//button
-        console.log(this.parentNode)//td
-        console.log(this.parentNode.parentNode)//tr
-        console.log(this.parentNode.parentNode.childNodes)// All 5 columns(td's)
-        let childNodes = this.parentNode.parentNode.childNodes;
+    <script>
+        var array = [];
+        var index = 0;
+        var idsOfInputs = ["itemName", "category", "quantity","price","rating"];
 
-        document.getElementById("itemName").value = childNodes[0].innerHTML;
-        document.getElementById("category").value = childNodes[1].innerHTML;
-        document.getElementById("quantity").value = childNodes[2].innerHTML;
-        document.getElementById("price").value = childNodes[3].innerHTML;
+        function createEditButton() {
+            let editTd = document.createElement("td");
+            let button = document.createElement("button");
+            button.innerHTML = "Edit";
+            button.setAttribute("myId", index);
+            button.onclick = function () {
+                //this -> button, this.parentNode->td,this.parentNode.parentNode->tr 
+                let childNodes = this.parentNode.parentNode.childNodes;
+                this.parentNode.parentNode.setAttribute("editing", "true");
+                for (let i = 0; i <= 2; i++) {
+                    document.getElementById(idsOfInputs[i]).value = childNodes[i].innerHTML
+                }
+                document.getElementById("mode").value = "Edit";
+                let myId = this.getAttribute("myId");
+                array.forEach(function (item) {
+                    if (item.id == myId) {
+                        item.name = document.getElementById("itemName").value;
+                        item.category = document.getElementById("category").value;
+                        item.quantity = document.getElementById("category").value;
+                        item.quantity = document.getElementById("price").value;
+                        item.quantity = document.getElementById("rating").value;
+                    }
+                })
 
-        let myId = this.getAttribute("myId");
-        array.forEach(function (item) {
-          if (item.id == myId) {
-            item.name = document.getElementById("itemName").value;
-            item.category = document.getElementById("category").value;
-            item.quantity = document.getElementById("category").value;
-            item.price = document.getElementById("price").value;
-          }
-        })
+            }
+            editTd.append(button);
+            return editTd;
+        }
+        function createDeleteButton() {
+            let td = document.createElement("td");
+            let deleteButton = document.createElement("button");
+            deleteButton.setAttribute("myId", index);
+            deleteButton.innerHTML = "Delete";
+            deleteButton.onclick = function () {
+                document.getElementById("mode").value = "";
+                let myId = this.getAttribute("myId")
+                console.log(this.getAttribute("myId"));
+                array = array.filter((item) => item.id != myId);
+                console.log(this.parentNode.parentNode);
+                this.parentNode.parentNode.remove();
+            }
+            td.append(deleteButton);
+            return td;
+        }
+        function add() {
+            let items = document.getElementById("items");
 
-      }
-      editTd.append(button);
-      tr.append(editTd);
+            if (document.getElementById("mode").value == "Edit") {
+                document.getElementById("mode").value = ""
+                let editTr = getEditedRow().childNodes;
+                for (let i = 0; i <= 2; i++) {
+                    editTr[i].innerHTML = document.getElementById(idsOfInputs[i]).value;
+                }
+            } else {
+                index++;
+                let item = {
+                    id: index, name: document.getElementById("itemName").value,
+                    category: document.getElementById("category").value,
+                    quantity: document.getElementById("quantity").value,
+                    price: document.getElementById("price").value,
+                    rating: document.getElementById("rating").value
+                };
+                array.push(item);
+                let tr = document.createElement("tr");
+                for (let eachInput of idsOfInputs) {
 
-      let td = document.createElement("td");
-      let deleteButton = document.createElement("button");
-      button.setAttribute("myId", index);
-      deleteButton.innerHTML = "Delete";
-      deleteButton.onclick = function () {
-        let myId = this.getAttribute("myId")
-        console.log(this.getAttribute("myId"));
-        array = array.filter((item) => item.id != myId);
-
-        console.log(this.parentNode.parentNode);
-        this.parentNode.parentNode.remove();
-
-      }
-      td.append(deleteButton);
-      tr.append(td);
-    }
-
-    function filter() {
-      console.log(array);
-      let filteredArray = array.filter((item) => Number(item.quantity) > 100);
-      let children = document.getElementById('items').childNodes;
-      for (let i = 2; i < children.length; i++) {
-        let eachTr = children[i];
-        console.log(eachTr.children[2]);
-        if (Number(eachTr.children[2].innerHTML) < 100) {
-          eachTr.style.display = "none";
+                    items.append(tr);
+                    let td = document.createElement("td");
+                    td.innerHTML = document.getElementById(eachInput).value;
+                    tr.append(td);
+                }
+                tr.append(createEditButton());
+                tr.append(createDeleteButton());
+            }
         }
 
-      }
-    }
+        function filter() {
+            document.getElementById("mode").value = "";
+            console.log(array);
+            let filteredArray = array.filter((item) => Number(item.quantity) > 100);
+            let children = document.getElementById('items').childNodes;
+            for (let i = 2; i < children.length; i++) {
+                let eachTr = children[i];
+                console.log(eachTr.children[2]);
+                if (Number(eachTr.children[2].innerHTML) < 100) {
+                    eachTr.style.display = "none";
+                }
+            }
+        }
 
-    function clearFilter() {
-      console.log(array);
-      let filteredArray = array.filter((item) => Number(item.quantity) > 100);
-      let children = document.getElementById('items').childNodes;
-      for (let i = 2; i < children.length; i++) {
-        let eachTr = children[i];
-        console.log(eachTr.children[2]);
-        eachTr.style.display = "";
-      }
+        function getEditedRow() {
+            let children = document.getElementById('items').childNodes;
+            for (let i = 2; i < children.length; i++) {
+                let eachTr = children[i];
+                if (eachTr.getAttribute("editing") === "true") {
+                    eachTr.setAttribute("editing", "");
+                    return eachTr;
+                }
+            }
+        }
 
-    }
-  </script>
+        function clearFilter() {
+            document.getElementById("mode").value = "";
+            console.log(array);
+            let filteredArray = array.filter((item) => Number(item.quantity) > 100);
+            let children = document.getElementById('items').childNodes;
+            for (let i = 2; i < children.length; i++) {
+                let eachTr = children[i];
+                console.log(eachTr.children[2]);
+                eachTr.style.display = "";
+            }
+
+        }
+    </script>
+    </div>
 </body>
 
 </html>
