@@ -46,144 +46,234 @@
         <p>
             <input type="submit" value="Add" class="addButton" onclick="add()" />
         </p>
-        <input type="submit" value="filter" onclick="filter()" />
-        <input type="submit" value="Clear Filter" onclick="clearFilter()" />
-        <input type="submit" value="Rating" onclick="rating()" />
+      
+        <p>
+          <input type="number" id="min" placeholder="Min" />
+          <input type="number" id="max" placeholder="Max" />
+          <input type="submit" value="price" onclick="price()" />
+          <input type="submit" value="Clear Filter" onclick="clearFilter()" />
+          <input type="submit" value="rating" onclick="rating()" />
+        </p>
+  
         <br />
-    </div>
-    <table id="items">
-        <tr>
+      </div>
+      <table>
+        <thead>
+          <tr>
             <th>Product Name</th>
+            <th>Product Img url</th>
             <th>Category</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Rating</th>
             <th>Edit</th>
             <th>Delete</th>
-        </tr>
-    </table>
-
-   
-    <script>
-        var array = [];
-        var index = 0;
-        var idsOfInputs = ["itemName", "category", "quantity","price","rating"];
-
-        function createEditButton() {
-            let editTd = document.createElement("td");
-            let button = document.createElement("button");
-            button.innerHTML = "Edit";
-            button.setAttribute("myId", index);
-            button.onclick = function () {
-                //this -> button, this.parentNode->td,this.parentNode.parentNode->tr 
-                let childNodes = this.parentNode.parentNode.childNodes;
-                this.parentNode.parentNode.setAttribute("editing", "true");
-                for (let i = 0; i <= 2; i++) {
-                    document.getElementById(idsOfInputs[i]).value = childNodes[i].innerHTML
-                }
-                document.getElementById("mode").value = "Edit";
-                let myId = this.getAttribute("myId");
-                array.forEach(function (item) {
-                    if (item.id == myId) {
-                        item.name = document.getElementById("itemName").value;
-                        item.category = document.getElementById("category").value;
-                        item.quantity = document.getElementById("category").value;
-                        item.quantity = document.getElementById("price").value;
-                        item.quantity = document.getElementById("rating").value;
-                    }
-                })
-
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+      </table>
+    
+      <script>
+        let array = [];
+        let index = 0;
+        let idsOfInputs = ["itemName", "imgurl", "category", "quantity", "price","rating"];
+        let items = document.getElementById("items");
+  
+        function createEditButton(index) {
+          let editTd = document.createElement("td");
+          let button = document.createElement("button");
+          button.innerHTML = "Edit";
+          button.setAttribute("myId", index);
+  
+          button.onclick = function () {
+            let childNodes = this.parentNode.parentNode.childNodes;
+            this.parentNode.parentNode.setAttribute("editing", "true");
+  
+            for (let i = 0; i <= 3; i++) {
+              document.getElementById(idsOfInputs[i]).value =
+                childNodes[i].innerHTML;
             }
-            editTd.append(button);
-            return editTd;
+  
+            document.getElementById("mode").value = "Edit";
+            let myId = this.getAttribute("myId");
+  
+            array.forEach(function (item) {
+              if (item.id == myId) {
+                item.name = document.getElementById("itemName").value;
+                item.category = document.getElementById("category").value;
+                item.quantity = document.getElementById("quantity").value;
+                item.price = document.getElementById("price").value;
+                item.rating = document.getElementById("rating").value;
+  
+              }
+            });
+          };
+  
+          editTd.append(button);
+          return editTd;
         }
-        function createDeleteButton() {
-            let td = document.createElement("td");
-            let deleteButton = document.createElement("button");
-            deleteButton.setAttribute("myId", index);
-            deleteButton.innerHTML = "Delete";
-            deleteButton.onclick = function () {
-                document.getElementById("mode").value = "";
-                let myId = this.getAttribute("myId")
-                console.log(this.getAttribute("myId"));
-                array = array.filter((item) => item.id != myId);
-                console.log(this.parentNode.parentNode);
-                this.parentNode.parentNode.remove();
-            }
-            td.append(deleteButton);
-            return td;
+  
+        function createDeleteButton(index) {
+          let td = document.createElement("td");
+          let deleteButton = document.createElement("button");
+          deleteButton.setAttribute("myId", index);
+          deleteButton.innerHTML = "Delete";
+          deleteButton.onclick = function (e) {
+            let products = JSON.parse(localStorage.getItem("products"));
+            products.splice(e.target.getAttribute("myId"), 1);
+            console.log(products);
+            localStorage.setItem("products", JSON.stringify(products));
+            displayProducts();
+          };
+          td.append(deleteButton);
+          return td;
         }
+  
         function add() {
-            let items = document.getElementById("items");
-
-            if (document.getElementById("mode").value == "Edit") {
-                document.getElementById("mode").value = ""
-                let editTr = getEditedRow().childNodes;
-                for (let i = 0; i <= 2; i++) {
-                    editTr[i].innerHTML = document.getElementById(idsOfInputs[i]).value;
-                }
+          let products = JSON.parse(localStorage.getItem("products"));
+  
+          if (document.getElementById("mode").value == "Edit") {
+            var item = {
+              id: index,
+              name: document.getElementById("itemName").value,
+              imgurl: document.getElementById("imgurl").value,
+              category: document.getElementById("category").value,
+              quantity: document.getElementById("quantity").value,
+              price: document.getElementById("price").value,
+              rating: document.getElementById("rating").value,
+            };
+  
+            products[index] = item;
+            localStorage.setItem("products", JSON.stringify(products));
+          } else {
+            index++;
+            var item = {
+              id: index,
+              name: document.getElementById("itemName").value,
+              imgurl: document.getElementById("imgurl").value,
+              category: document.getElementById("category").value,
+              quantity: document.getElementById("quantity").value,
+              price: document.getElementById("price").value,
+              rating: document.getElementById("rating").value,
+            };
+  
+            if (products == null || (products != null && products.length == 0)) {
+              products = [];
+              products.push(item);
             } else {
-                index++;
-                let item = {
-                    id: index, name: document.getElementById("itemName").value,
-                    category: document.getElementById("category").value,
-                    quantity: document.getElementById("quantity").value,
-                    price: document.getElementById("price").value,
-                    rating: document.getElementById("rating").value
-                };
-                array.push(item);
-                let tr = document.createElement("tr");
-                for (let eachInput of idsOfInputs) {
-
-                    items.append(tr);
-                    let td = document.createElement("td");
-                    td.innerHTML = document.getElementById(eachInput).value;
-                    tr.append(td);
-                }
-                tr.append(createEditButton());
-                tr.append(createDeleteButton());
+              products.push(item);
+            }
+  
+            localStorage.setItem("products", JSON.stringify(products));
+          }
+  
+          displayProducts();
+        }
+  
+        function displayProducts(filterProducts) {
+          items.innerHTML = "";
+          let products = JSON.parse(localStorage.getItem("products"));
+          console.log(products);
+          index = products && products.length > 0 ? products.length - 1 : -1;
+  
+          if (filterProducts) products = filterProducts;
+  
+          let count = 0;
+          if (products)
+            for (let product of products) {
+              let tr = document.createElement("tr");
+              items.append(tr);
+  
+              let td = document.createElement("td");
+              td.innerHTML = product.name;
+              tr.append(td);
+  
+              td = document.createElement("td");
+              td.innerHTML = product.imgurl;
+              tr.append(td);
+  
+              td = document.createElement("td");
+              td.innerHTML = product.category;
+              tr.append(td);
+  
+              td = document.createElement("td");
+              td.innerHTML = product.quantity;
+              tr.append(td);
+  
+              td = document.createElement("td");
+              td.innerHTML = product.price;
+              tr.append(td);
+  
+              td = document.createElement("td");
+              td.innerHTML = product.rating;
+              tr.append(td);
+  
+              tr.append(createEditButton(count));
+              tr.append(createDeleteButton(count));
+              count++;
             }
         }
-
-        function filter() {
-            document.getElementById("mode").value = "";
-            console.log(array);
-            let filteredArray = array.filter((item) => Number(item.quantity) > 100);
-            let children = document.getElementById('items').childNodes;
-            for (let i = 2; i < children.length; i++) {
-                let eachTr = children[i];
-                console.log(eachTr.children[2]);
-                if (Number(eachTr.children[2].innerHTML) < 100) {
-                    eachTr.style.display = "none";
-                }
-            }
+        displayProducts();
+  
+        function price() {
+          document.getElementById("mode").value = "";
+  
+          let products = JSON.parse(localStorage.getItem("products"));
+          let min = Number(document.getElementById("min").value);
+          let max = Number(document.getElementById("max").value);
+  
+          let filteredArray;
+  
+          if (min > 0 && max > 0)
+            filteredArray = products.filter(
+              (item) => Number(item.price) >= min && Number(item.price) <= max
+            );
+          else if (min > 0)
+            filteredArray = products.filter((item) => Number(item.price) >= min);
+          else if (max > 0)
+            filteredArray = products.filter((item) => Number(item.price) <= max);
+  
+          displayProducts(filteredArray);
         }
-
+        
+  
+        function rating() {
+          document.getElementById("mode").value = "";
+  
+          let products = JSON.parse(localStorage.getItem("products"));
+          let min = Number(document.getElementById("min").value);
+          let max = Number(document.getElementById("max").value);
+  
+          let filteredArray;
+  
+          if (min > 0 && max > 0)
+            filteredArray = products.filter(
+              (item) => Number(item.rating) >= min && Number(item.rating) <= max
+            );
+          else if (min > 0)
+            filteredArray = products.filter((item) => Number(item.rating) >= min);
+          else if (max > 0)
+            filteredArray = products.filter((item) => Number(item.rating) <= max);
+  
+          displayProducts(filteredArray);
+        }
+  
         function getEditedRow() {
-            let children = document.getElementById('items').childNodes;
-            for (let i = 2; i < children.length; i++) {
-                let eachTr = children[i];
-                if (eachTr.getAttribute("editing") === "true") {
-                    eachTr.setAttribute("editing", "");
-                    return eachTr;
-                }
+          let children = document.getElementById("items").childNodes;
+          for (let i = 2; i < children.length; i++) {
+            let eachTr = children[i];
+            if (eachTr.getAttribute("editing") === "true") {
+              eachTr.setAttribute("editing", "");
+              return eachTr;
             }
+          }
         }
-
+  
         function clearFilter() {
-            document.getElementById("mode").value = "";
-            console.log(array);
-            let filteredArray = array.filter((item) => Number(item.quantity) > 100);
-            let children = document.getElementById('items').childNodes;
-            for (let i = 2; i < children.length; i++) {
-                let eachTr = children[i];
-                console.log(eachTr.children[2]);
-                eachTr.style.display = "";
-            }
-
+          document.getElementById("min").value = "";
+          document.getElementById("max").value = "";
+          displayProducts();
         }
-    </script>
-    </div>
-</body>
-
-</html>
+      </script>
+    </body>
+  </html>
