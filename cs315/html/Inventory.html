@@ -51,9 +51,13 @@
         <p>
           <input type="number" id="min" placeholder="Min" />
           <input type="number" id="max" placeholder="Max" />
-          <input type="submit" value="price" onclick="price()" />
+          <input type="submit" value="Price" onclick="price()" />
+          <input type="submit" value="Rating" onclick="rating()" />
           <input type="submit" value="Clear Filter" onclick="clearFilter()" />
-          <input type="submit" value="rating" onclick="rating()" />
+          <br>
+        <br><b></b>
+        <input type="text" name="category" id="category" placeholder="category">
+        <input type="submit" value="Category" onclick="category()" />
         </p>
   
         <br />
@@ -258,6 +262,18 @@
   
           displayProducts(filteredArray);
         }
+        
+        
+        function category() {
+        document.getElementById("mode").value = "";
+
+        let products = JSON.parse(localStorage.getItem("products"));
+        let category = document.getElementById("category").value; 
+        let filteredArray;       
+        filteredArray =  products.filter((item) => item.category == "category");
+            displayProducts(filteredArray);
+             
+      }
   
         function getEditedRow() {
           let children = document.getElementById("items").childNodes;
@@ -273,6 +289,7 @@
         function clearFilter() {
           document.getElementById("min").value = "";
           document.getElementById("max").value = "";
+          document.getElementById("category").value = "";
           displayProducts();
         }
       </script>
