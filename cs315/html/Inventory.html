@@ -56,8 +56,8 @@
           <input type="submit" value="Clear Filter" onclick="clearFilter()" />
           <br>
         <br><b></b>
-        <input type="text" name="category" id="category" placeholder="category">
-        <input type="submit" value="Category" onclick="category()" />
+       <input type="text" placeholder="enter search" id="search"/>
+        <input type="submit" value="search" id="searchKey" onclick="searchByCategory()"/>
         </p>
   
         <br />
@@ -264,14 +264,28 @@
         }
         
         
-        function category() {
-        document.getElementById("mode").value = "";
-
+         function searchByCategory(){
+         document.getElementById("mode").value = "";
         let products = JSON.parse(localStorage.getItem("products"));
-        let category = document.getElementById("category").value; 
-        let filteredArray;       
-        filteredArray =  products.filter((item) => item.category == "category");
-            displayProducts(filteredArray);
+        let searchInput = document.getElementById("search").value;
+       
+        let filteredArray;
+
+        if(filteredArray = products.filter(
+            (item) => (item.category) == searchInput 
+        )){
+        displayProducts(filteredArray);
+        }      
+
+        if(filteredArray = products.filter(
+            (item) => (item.name) == searchInput 
+        )){
+        displayProducts(filteredArray);
+        }
+
+        
+
+    }
              
       }
   
