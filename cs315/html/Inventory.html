@@ -24,9 +24,9 @@
           <input type="text" value="" id="itemName" />
         </p>
         <p>
-          Product Img URL: &nbsp; &nbsp; &nbsp;
+<!--           Product Img URL: &nbsp; &nbsp; &nbsp;
           <input type="text" value="" id="imgurl" />
-        </p>
+        </p> -->
         <p>
           Item Category: &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
           <input type="text" value="" id="category" />
@@ -65,8 +65,8 @@
       <table>
         <thead>
           <tr>
-            <th>Product Name</th>
-            <th>Product Imgurl</th>
+            <th>Item Name</th>
+<!--             <th>Product Imgurl</th> -->
             <th>Category</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -141,7 +141,7 @@
             var item = {
               id: index,
               name: document.getElementById("itemName").value,
-              imgurl: document.getElementById("imgurl").value,
+//               imgurl: document.getElementById("imgurl").value,
               category: document.getElementById("category").value,
               quantity: document.getElementById("quantity").value,
               price: document.getElementById("price").value,
@@ -155,7 +155,7 @@
             var item = {
               id: index,
               name: document.getElementById("itemName").value,
-              imgurl: document.getElementById("imgurl").value,
+//               imgurl: document.getElementById("imgurl").value,
               category: document.getElementById("category").value,
               quantity: document.getElementById("quantity").value,
               price: document.getElementById("price").value,
@@ -193,9 +193,9 @@
               td.innerHTML = product.name;
               tr.append(td);
   
-              td = document.createElement("td");
-              td.innerHTML = product.imgurl;
-              tr.append(td);
+//               td = document.createElement("td");
+//               td.innerHTML = product.imgurl;
+//               tr.append(td);
   
               td = document.createElement("td");
               td.innerHTML = product.category;
