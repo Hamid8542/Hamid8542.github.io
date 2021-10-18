@@ -31,7 +31,7 @@
       
   </style>
 </head>
-<body>
+<!-- <body>
     <div class ="main">
         <img src ="https://1920x1080hdwallpapers.com/image/201612/brands/7322/amazon-symbol.jpg" class="roundImage" style="max-width: 100%px; object-fit: cover";/>
         <div class="innerDiv">
@@ -100,4 +100,62 @@
         }
     </script>
 </body>
+</html> -->
+  
+  <body>
+    <div class ="main">
+        <img src ="https://1920x1080hdwallpapers.com/image/201612/brands/7322/amazon-symbol.jpg" class="roundImage" style="max-width: 100%px; object-fit: cover";/>
+        <div class="innerDiv">
+            <label>Email</label>
+            <input type="text" id="email"/>
+            <label>Password</label>
+            <input type="text" id="password"/>
+        </div>
+        <button style="justify-self:center; background-color: rgb(185, 185, 250);border-radius:10px;font-size: 15px; width:120px;" onclick="login();">Login</button>
+        <div style="justify-self:center;"><a href="signup.html" >New User? SignUp</a></div>
+    </div>
+    <script>
+        function login(){
+            let email = document.getElementById("email").value;
+            let pwd = document.getElementById("password").value;
+             
+            if(email =="manager@email.com") {
+                if(pwd=="managerpwd"){
+                    window.location.href="inventory.html";
+                }
+                else if(pwd==""){
+                        alert("Please enter passwod!");
+                    }
+                else{
+                        alert("Wrong Password!");
+                    }
+                }
+
+            else if(email=="custemer@email.com"){
+                    if(pwd=="custemerpwd"){
+                        window.location.href="MainA.html";
+                    } 
+                    else if(pwd==""){
+                        alert("Please enter passwod!");
+                    }
+                   else{
+                        alert("Wrong Password!");
+                    } 
+
+                }
+            else if(email=="" ){
+                alert("Please enter login information!");
+            }
+            
+            else if(!(email=="custemer@email.com"))
+                    {
+                        alert("invalid e-mail");
+                    }
+            
+        }
+    </script>
+</body>
 </html>
+
+  
+  
