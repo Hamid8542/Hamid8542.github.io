@@ -100,13 +100,13 @@
 //         }
       
       
-       function login(){
+     function login(){
             let email = document.getElementById("email").value;
             let pwd = document.getElementById("password").value;
              
             if(email =="manager@email.com") {
-                if(pwd=="managerpwd"){
-                    window.location.href="Inventory.html";
+                if(pwd=="Manager1@pwd"){
+                    window.location.href="inventory.html";
                 }
                 else if(pwd==""){
                         alert("Please enter passwod!");
@@ -117,7 +117,7 @@
                 }
 
             else if(email=="customer@email.com"){
-                    if(pwd=="customerpwd"){
+                    if(pwd=="Customer1@pwd"){
                         window.location.href="main.html";
                     } 
                     else if(pwd==""){
