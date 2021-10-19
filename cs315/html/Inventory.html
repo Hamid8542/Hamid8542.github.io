@@ -21,7 +21,8 @@
      <div>
         <p>
           Item Name: &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
-          <input type="text" value="" id="itemName" />
+          <input type="text" value="" id="name" />
+<!--            <input type="text" value="" id="itemName" /> -->
         </p>
         <p>
 <!--           Product Img URL: &nbsp; &nbsp; &nbsp;
@@ -82,7 +83,7 @@
       <script>
         let array = [];
         let index = 0;
-        let idsOfInputs = ["itemName", "imgurl", "category", "quantity", "price","rating"];
+        let idsOfInputs = ["name", "imgurl", "category", "quantity", "price","rating"];
         let items = document.getElementById("items");
   
         function createEditButton(index) {
@@ -105,7 +106,7 @@
   
             array.forEach(function (item) {
               if (item.id == myId) {
-                item.name = document.getElementById("itemName").value;
+                item.name = document.getElementById("name").value;
                 item.category = document.getElementById("category").value;
                 item.quantity = document.getElementById("quantity").value;
                 item.price = document.getElementById("price").value;
@@ -141,7 +142,7 @@
           if (document.getElementById("mode").value == "Edit") {
             var item = {
               id: index,
-              name: document.getElementById("itemName").value,
+              name: document.getElementById("name").value,
 //               imgurl: document.getElementById("imgurl").value,
               category: document.getElementById("category").value,
               quantity: document.getElementById("quantity").value,
@@ -155,7 +156,7 @@
             index++;
             var item = {
               id: index,
-              name: document.getElementById("itemName").value,
+              name: document.getElementById("name").value,
 //               imgurl: document.getElementById("imgurl").value,
               category: document.getElementById("category").value,
               quantity: document.getElementById("quantity").value,
