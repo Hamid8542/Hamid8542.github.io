@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -350,6 +350,417 @@
             <label> Home</label>
             <a href="../html/TeamProfilePage.html"> About </a>
             <a href="../html/Inventory.html"> Inventory</a>
+            <label> Services</label>
+            <label> Blog</label>
+            <label> Contacts</label>
+        </div>
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+</head>
+
+<style>
+    .container {
+        display: grid;
+        background-color: rgb(3, 3, 3);
+        margin-right: 66px;
+        position: relative;
+
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        height: 70px;
+    }
+
+    .logo {
+        margin-left: 1px;
+    }
+
+    .p-2 bd-highlight {
+        display: flex;
+
+    }
+
+    .input-group {
+        width: 500px;
+        height: 20px;
+        padding-top: 10px;
+        color: white;
+
+    }
+
+    .shoppingcart {
+        display: flex;
+        padding-left: 60px;
+        padding-top: 10px;
+
+    }
+
+    .mycarouse {
+        padding: 1px;
+    }
+
+    .card-group {
+        display: flex;
+        gap: 20px;
+        position: fixed;
+        height: 1px;
+        margin-right: 70px;
+        margin-bottom: 25px;
+    }
+
+    .links {
+        color: white;
+        display: inline-flex;
+        margin-top: -17px;
+        align-items: stretch;
+        justify-content: space-between;
+        text-decoration: underline;
+        background-color: black;
+    }
+
+    .footer {
+        display: flex;
+        background-color: black;
+        width: 90%;
+        height: 50px;
+        margin-left: 59px;
+        margin-right: 30px;
+        padding-left: 20px;
+        padding-top: 10px;
+        color: white;
+        align-self: center;
+        position: relative;
+        
+
+
+    }
+    /* .footer {
+    display: grid;
+        background-color: black;
+        max-width: 100%;
+        height: 100px;
+        margin-bottom: 8px;
+        margin-left: 102px;
+        margin-right: 102px;
+        padding-left: 300px;
+        align-items: center;
+        align-self: center;
+        color: white;
+        display: inline;
+        display: flex;
+        width: 100%;
+        height: 1000px;
+         margin-top: 2px;
+         position: relative;
+    }  */
+
+    .card {
+        height: 300px;
+        margin-bottom: 3px;
+    }
+
+    .login {
+        display: inline;
+        padding-left: 20px;
+        padding-top: 10px;
+        font-size: 18px;
+
+    }
+
+    .signUp {
+        display: flex;
+        display: inline;
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 18px;
+        align-items: center;
+    }
+
+    .dropdown {
+        padding-top: 3px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="sticky-top">
+            <div class="header">
+
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <div class="logo">
+                            <p style="color:white;">
+                                <img src="https://www.etcentric.org/wp-content/uploads/2016/07/Amazon_Logo_Black_bg.jpg"
+                                    style="max-width:100px;object-fit: cover;">
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="p-2 bd-highlight">
+
+                        <div class="dropdown">
+                            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                                <div class="container-fluid">
+                                    <!--
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>-->
+                                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#"
+                                                    id="navbarDarkDropdownMenuLink" role="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    All
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-dark"
+                                                    aria-labelledby="navbarDarkDropdownMenuLink">
+                                                    <li><a class="dropdown-item" href="#">Accessesorys</a></li>
+                                                    <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                                    <li><a class="dropdown-item" href="#">Home Accessorys</a></li>
+                                                    <li><a class="dropdown-item" href="#">Jewlery</a></li>
+                                                    <li><a class="dropdown-item" href="#">Kids</a></li>
+                                                    <li><a class="dropdown-item" href="#">Men</a></li>
+                                                    <li><a class="dropdown-item" href="#">Women</a></li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+                            aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="search"><img
+                                src="https://www.pinclipart.com/picdir/big/15-153180_search-button-search-symbol-svg-clipart.png"
+                                style="width: 25px;"></span>
+
+                    </div>
+                    <div class="dropdown">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">
+                                    <img src="https://hotemoji.com/images/dl/0/american-flag-emoji-by-twitter.png"
+                                        style="max-width:30px; object-fit: cover;">
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Country
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-dark"
+                                                aria-labelledby="navbarDarkDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">United State</a></li>
+                                                <li><a class="dropdown-item" href="#">Ethiopia</a></li>
+                                                <li><a class="dropdown-item" href="#">Eritrea</a></li>
+                                                <li><a class="dropdown-item" href="#">Keneya</a></li>
+                                                <li><a class="dropdown-item" href="#">Somalia</a></li>
+                                                <li><a class="dropdown-item" href="#">Canada</a></li>
+                                                <li><a class="dropdown-item" href="#">France</a></li>
+                                                <li><a class="dropdown-item" href="#">UK England</a></li>
+                                                <li><a class="dropdown-item" href="#">India</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="login">
+                        <div style="display:flex;font-size: medium;">
+                            <a href="login.html">Login</a>
+
+                        </div>
+                    </div>
+
+                    <div class="signUp">
+                        <div style="display:flex;font-size: medium;">
+                            <a href="SignUp.html">SignUp</a>
+
+                        </div>
+                    </div>
+
+                    <div class="shoppingcart  position-relative">
+                        <div class="logo">
+                            <a href="inventory.html">
+
+                                <p style="color:white;">
+                                    <img src="https://tse2.mm.bing.net/th?id=OIP.KDAiQNM3izVq2QWBlpw_CAHaDt&pid=Api&P=0&w=326&h=163"
+                                        style="width:50px;flex-direction: row;align-items: flex-end;position: relative;object-fit: cover;">
+                                    <span
+                                        class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">
+                                        3
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="links">
+                    <div style="display:flex;gap:15px;">
+                        <label> Home</label>
+                        <a href="TeamProfilePage.html" style="color:white"> About </a>
+                        <a href="inventory.html" style="color:white"> Inventory</a>
+                        <label> Services</label>
+                        <label> Blog</label>
+                        <label> Contacts</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mycarouse">
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        arial-labl="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+
+                </div>
+                <div class="carousel-inner position-relative">
+                    <div class="carousel-item active">
+                        <img src="https://m-cdn.phonearena.com/images/article/128501-two_1200/Steve-Jobs-demanded-quality-Tim-Cook-quantity-and-iPhone-13-may-suffer-iPhone-12s-fate.jpg"
+                            class="d-block w-100" alt="Phone" Style="max-width: 100%; height:730px;object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.ungeek.ph/wp-content/uploads/2021/01/samsung_galaxy_buds_2021_image2.jpg"
+                            class="d-block w-100 " alt="Earbud"
+                            Style="max-width:100%; height:730px; object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.rejmak.com/wp-content/uploads/2020/08/samsung_galaxy_watch_3_winfuture.jpg"
+                            class="d-block w-100" alt="watch" Style="max-width: 100%;height:730px;object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.insider.com/50a28b5c69bedd5c74000008" class="d-block w-100" alt="laptop"
+                            Style="max-width: 100%; height:730px;object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cmjbivkfjw-flywheel.netdna-ssl.com/wp-content/uploads/2017/06/91DmIujXGSL._SL1500_-1260x826.jpg"
+                            class="d-block w-100" alt="TV" Style="max-width: 100%;height:730px;object-fit: cover;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="card-group bottom-50 ">
+            <div class="card ">
+                <img src="https://riverview.org/blog/wp-content/uploads/2015/11/child-with-toys.jpg"
+                    class="card-img-top" alt="kids-toy">
+                <div class="card-body">
+                    <h2 class="card-title">Toy</h2>
+                    <p class="card-text ">Limited time </p>
+                    <p class="card-text"><small class="text-muted"><a href="productlist.html"
+                                class="btn btn-danger btn-lg">Hot deal</a></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://www.lls.org/sites/default/files/National/USA/Image/banner/banner-support-suggested-reading.jpg"
+                    class="card-img-top" alt="Books">
+                <div class="card-body">
+                    <h2 class="card-title">Book</h2>
+                    <p class="card-text">Free shiping</p>
+                    <p class="card-text"><small class="text-muted"><a href="productlist.html"
+                                class="btn btn-danger btn-lg">Top-picks</a></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i5.walmartimages.com/asr/98435063-f95f-469b-abfd-405e7a29b323.c6139d9048e8288f90c5680fd3c4ca12.jpeg"
+                    class="card-img-top" alt="phone-accessories" style="height:50%;object-fit: contain;">
+                <div class="card-body">
+                    <h2 class="card-title">Phone-accessories</h2>
+                    <p class="card-text">Holiday</p>
+                    <p class="card-text"><small class="text-muted"><a href="productlist.html"
+                                class="btn btn-danger btn-lg">Hot deal</a></small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/7a/7b/fe/7a7bfe4e87d746541a3e6a86b787fb7e.jpg"
+                    class="card-img-top" alt="top-picks" style="height:50%; object-fit: contain;">
+                <div class="card-body">
+                    <h2 class="card-title">More</h2>
+                    <p class="card-text">Recent</p>
+                    <p class="card-text"><small class="text-muted"><a href="productlist.html"
+                                class="btn btn-danger btn-lg">Top-picks</a></small></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div>
+            <label> Home</label>
+            <a href="TeamProfilePage.html"> About </a>
+            <a href="inventory.html"> Inventory</a>
             <label> Services</label>
             <label> Blog</label>
             <label> Contacts</label>
