@@ -95,7 +95,7 @@
             let childNodes = this.parentNode.parentNode.childNodes;
             this.parentNode.parentNode.setAttribute("editing", "true");
   
-            for (let i = 0; i <= children.length ; i++) {
+            for (let i = 0; i <= 3 ; i++) {
               document.getElementById(idsOfInputs[i]).value =
                 childNodes[i].innerHTML;
             }
