@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+        <style>
+    .container {
+            display: flex;
+            flex-direction: column;
+            height:600px;
+            width:100%;
+            border:1px solid lightsteelblue;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        height: 90px;
+        padding-right: 10px;
+        margin-top: 20px;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+
+    .logo {
+        margin-left: 1px;
+    }
+
+    .p-2 bd-highlight {
+        display: flex;
+
+    }
+    
+    .shoppingcart {
+        display: flex;
+        padding-left: 60px;
+        padding-top: 10px;
+
+    }
+
+    .roe{
+        display:flex;
+    }
+    .midle{
+        padding:20px;
+        padding-top:40px;
+        font-size: 30px;
+    }
+    .last{
+        display:flex;
+        flex-direction: column;
+        margin-top: 100px;
+        border:1px solid rgb(216, 212, 212);
+        border-radius: 20px;
+        padding:20px;
+        font-size: 20px;
+        color:rgb(240, 13, 13)
+    }
+    .add{
+        background-color: rgb(250, 162, 48);
+        text-align: center;
+        border-radius: 10px;
+        width:150px;
+    }
+    .lastButton{
+        margin: 30px;
+        padding:20px;
+       border-radius:10px;
+       font-size: 15px;
+    }
+    img{
+        max-width: 100%; 
+        height:100%; 
+         object-fit: contain;
+    }
+    
+        </style>
+    
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <div class="p-2 bd-highlight">
+                    <div class="logo">
+                        <p style="color:white;">
+                            <img src="https://www.etcentric.org/wp-content/uploads/2016/07/Amazon_Logo_Black_bg.jpg" style="max-width:100px;object-fit: cover;">
+                        </p>
+                    </div>
+
+                </div>
+                <div class="p-2 bd-highlight">
+
+                    <div class="dropdown">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                            <div class="container-fluid">
+                              
+                                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                All
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-dark"
+                                                aria-labelledby="navbarDarkDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">Accessesorys</a></li>
+                                                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                                <li><a class="dropdown-item" href="#">Home Accessorys</a></li>
+                                                <li><a class="dropdown-item" href="#">Jewlery</a></li>
+                                                <li><a class="dropdown-item" href="#">Kids</a></li>
+                                                <li><a class="dropdown-item" href="#">Men</a></li>
+                                                <li><a class="dropdown-item" href="#">Women</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control topBar" placeholder="" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2" >
+                    <span class="input-group-text" id="search"><img src="https://www.pinclipart.com/picdir/big/15-153180_search-button-search-symbol-svg-clipart.png" style="width: 25px;"></span>
+
+                </div>
+                <div class="dropdown">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">
+                                <img src="https://hotemoji.com/images/dl/0/american-flag-emoji-by-twitter.png" style="max-width:30px; object-fit: cover;">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Country
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark"
+                                            aria-labelledby="navbarDarkDropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#">United State</a></li>
+                                            <li><a class="dropdown-item" href="#">Ethiopia</a></li>
+                                            <li><a class="dropdown-item" href="#">Eritrea</a></li>
+                                            <li><a class="dropdown-item" href="#">Keneya</a></li>
+                                            <li><a class="dropdown-item" href="#">Somalia</a></li>
+                                            <li><a class="dropdown-item" href="#">Canada</a></li>
+                                            <li><a class="dropdown-item" href="#">France</a></li>
+                                            <li><a class="dropdown-item" href="#">UK England</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                
+
+                <div class="shoppingcart  position-relative">
+                    <div class="logo">
+                        <a href="inventory.html"> 
+
+                        <p style="color:white;">
+                            <img src="https://tse2.mm.bing.net/th?id=OIP.KDAiQNM3izVq2QWBlpw_CAHaDt&pid=Api&P=0&w=326&h=163" 
+                                style="width:50px;flex-direction: row;align-items: flex-end;position: relative;object-fit: cover;">
+                            <span
+                                class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">
+                                3                             
+                        </p>
+                    </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    
+        <div class="row">
+            <div class="col col-sm-4 ">
+                <img src="https://riverview.org/blog/wp-content/uploads/2015/11/child-with-toys.jpg"" >
+            </div>
+            <div class="col col-sm-5 py-5">
+                <div class="card" style="font-style:oblique;">
+                    <p class="midle">Toys Bluetooth 5.0 wirwless ear bud FocusPower Mini Bluetooth Earbud. thisearbuds are a more portable, 
+                        more pleasurable.
+                        </p>
+                        <p style="padding:10px">
+                           <label>Visit the Tozo Store </label> 
+                           </p>
+                           <p style="border-bottom: 1px solid rgb(190, 187, 187);padding:10px">
+                            <img src="https://clipartmag.com/images/5-star-rating-clipart-43.jpg" style="max-width: 90px;object-fit: cover;">
+                            <lable style="font-size: 15px;color:rgb(69, 143, 253);  "> ^ 250,028 rating | 1000+ answered questions</lable>
+                            
+                        </p>
+                    <div class="card-body">
+                      <h3 class="card-title" style="color:red;">Price $29.99</h3>
+                      <p class="card-text" style="font-size: 20px;color:rgb(26, 167, 26); margin-left:20px">save and extract 20% when apply coupon</p>
+                      <p class="card-text"><small class="text-muted" style="font-size:15px">Available at lower price from other seller of the brand.</small></p>
+                    </div>
+                  </div>
+                </div>
+
+            <div class="col col-3 ">
+                <div class="last">
+                    <div>
+                    <p>$29.99</p>
+                    <p>
+                        this item cannot be shipped to your delivery location. please choose different delivery location. 
+                    </p>
+                    <p>
+                        <button class="add"><a href="#">Add to Cart</a></button>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <button class="lastButton"> <a href="#">New (13) from $29.99 ></a></button>
+            </div>
+        </div>
+    </div>
+    </body>
