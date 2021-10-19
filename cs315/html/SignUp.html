@@ -25,7 +25,7 @@
  
 </style>
 
-<script>
+<!-- <script>
   (function () {
     'use strict'
     window.addEventListener('load', function () {
@@ -156,9 +156,9 @@
                 I want to receive the newsletters
               </label>
             </div>
-
+-->
             <div class="mb-3 col-12">
-              <!-- <button type="button" name = "submit" value = "submit" class="btn btn-warning">Register</button> -->
+             <button type="button" name = "submit" value = "submit" class="btn btn-warning">Register</button> -->
               <input class="btn btn-warning" type="submit" value="submit" />
               <form method="get" action="../html/preview.html">
 
@@ -168,16 +168,209 @@
 
               </form>
 
-
-
             </div>
 
       </form>
 
     </div>
-    </div>
+    </div> -->
 
 
+
+          <label class="glyphicon glyphicon-user" for="Inputfirstname" class="form-label"></label>
+          <input type="firstname" class="form-control" id="firstname" placeholder="First Name" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+        </div>
+        </div>
+
+        <div class="mb-3 col-12">
+          <label class="glyphicon glyphicon-user" for="Inputlastname" class="form-label"></label>
+          <input type="lastname" class="form-control" id="lastname" placeholder="Last Name" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+        </div>
+        </div>
+
+        <div class="mb-3 col-12">
+          <label class="glyphicon glyphicon-envelope" for="InputEmail1" class="form-label"></label>
+          <input type="email" class="form-control" id="email" placeholder="Email ">
+        </div>
+
+        <div class="mb-3 col-12">
+          <label class="glyphicon glyphicon-lock" for="InputPassword1" class="form-label"></label>
+          <input type="password" class="form-control" id="password" placeholder="Password ">
+        </div>
+
+        <div class="mb-3 col-12">
+          <label class="glyphicon glyphicon-lock" for="InputPassword1" class="form-label"></label>
+          <input type="password" class="form-control" id="repassword" placeholder="Re-type Password">
+        </div>
+
+        <div class="myCon col-12" style="font-size:10px">
+
+          <input class="form-check-input" 
+                type="radio" 
+                id="inlineCheckbox1" 
+                value="male"
+                name="gender"
+              /> 
+              <label class="form-check-label" for="inlineCheckbox1">Male</label> 
+
+              <input 
+              class="form-check-input" 
+              type="radio" 
+              id="inlineCheckbox2" 
+              value="female"
+              name="gender"
+            /> 
+            <label class="form-check-label" for="inlineCheckbox2">Female</label> 
+
+        </div>
+
+        <div class="myCon col-12" style="font-size:10px">
+          <input 
+            class="form-check-input" 
+            type="radio" 
+            id="inlineCheckbox3" 
+            value="manager"
+            name="role"
+          /> 
+          <label class="form-check-label" for="inlineCheckbox1">Manager</label> 
+
+          <input 
+            class="form-check-input" 
+            type="radio" 
+            id="inlineCheckbox4" 
+            value="customer" 
+            name="role"
+          /> 
+          <label class="form-check-label" for="inlineCheckbox2">Customer</label>
+        </div>
+
+
+        <div>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Select a country</option>
+            <option value="1">Ethiopia</option>
+            <option value="1">Eritrea</option>
+            <option value="1">Keneya</option>
+            <option value="1">Somalia</option>
+            <option value="1">United States</option>
+            <option value="2">Canada</option>
+            <option value="3">Germany</option>
+            <option value="3">England</option>
+            <option value="3">Russia</option>
+            <option value="3">China</option>
+            <option value="3">France</option>
+            <option value="3">Mexico</option>
+            <option value="3">Japan</option>
+          </select>
+        </div>
+
+        <div class="form-check d-flex justify-content-center mb-5">
+          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+          <label class="form-check-label" for="form2Example3" style="font-size:10px;">
+            I agree with terms and conditions
+          </label>
+        </div>
+
+        <div class="form-check d-flex justify-content-center mb-5">
+          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+          <label class="form-check-label" for="form2Example3" style="font-size:10px;">
+            I want to receive the newsletters
+          </label>
+        </div>
+
+        <div class="mb-3 col-12">
+          <!-- <button type="button" name = "submit" value = "submit" class="btn btn-warning">Register</button> -->
+          <input class="btn btn-warning" type="submit" value="submit"/>
+          <!-- <input type="text" name="fname"/>
+          <input type="text" name="lname"/> -->
+
+  </div>
+
+</form>
+
+</div>
+</div>
+
+
+<script>
+window.onload = function () {
+  // localStorage.removeItem("users");
+  let password = document.getElementById("password"),
+    repassword = document.getElementById("repassword");
+  let passw = /^(?=.*\d)(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,14}$/;
+
+  //page redirect
+  function getData() {
+    //gettting the values
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let cpassword = document.getElementById("repassword").value;
+    let fname = document.getElementById("firstname").value;
+    let lname = document.getElementById("lastname").value;
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+    let role = document.querySelector('input[name="role"]:checked').value;
+
+    //saving the values in local storage
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    let newUser = [
+      {
+        email: email,
+        password: password,
+        firstName: fname,
+        lastName: lname,
+        gender: gender,
+        role: role,
+      },
+    ];
+
+    if (users == null || (users != null && users.length == 0)) {
+      users = newUser;
+    } else {
+      users = users.concat(newUser);
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    window.location.href = "Login.html";
+  }
+
+  function validatTheInput() {
+    if (!password.value.match(passw) || !repassword.value.match(passw)) {
+      alert("enter vaild password please");
+      return false;
+    }
+
+    return true;
+  }
+
+  document.getElementById("signup-form").onsubmit = function (e) {
+    e.preventDefault();
+    if (validatTheInput() && validatePassword()) {
+      getData();
+    }
+  };
+
+  function validatePassword() {
+    if (password.value != repassword.value) {
+      repassword.setCustomValidity("Your Passwords Don't Match");
+      return false;
+    } else {
+      repassword.setCustomValidity("");
+      return true;
+    }
+  }
+
+  password.onchange = validatePassword;
+  repassword.onkeyup = validatePassword;
+};
+
+
+</script>
 
 </body>
 
