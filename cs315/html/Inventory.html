@@ -140,7 +140,7 @@
           let products = JSON.parse(localStorage.getItem("products"));
   
           if (document.getElementById("mode").value == "Edit") {
-            var item = {
+            let item = {
               id: index,
               name: document.getElementById("name").value,
 //               imgurl: document.getElementById("imgurl").value,
@@ -154,7 +154,7 @@
             localStorage.setItem("products", JSON.stringify(products));
           } else {
             index++;
-            var item = {
+            let item = {
               id: index,
               name: document.getElementById("name").value,
 //               imgurl: document.getElementById("imgurl").value,
