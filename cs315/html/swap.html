@@ -1,0 +1,48 @@
+<!-- Lab-4  -->
+<!--    1. Create a `swap.html` page which has 2 pictures and 1 button on it.
+        2. You can use any picture you want (See two samples attached).
+        3. Add a button named `Swap`.
+        4. When you click the `Swap` button, the location of two pictures are swapped. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Pictures</title>
+
+  <style>
+
+    .container{
+      margin: auto;
+      padding: 40px;
+    }
+  </style>
+
+  <script>
+
+    function swap() {
+
+      let image1 = document.getElementById("img1");
+      let image2 = document.getElementById("img2");
+      let image = image1.src;
+          image1.src = image2.src;
+          image2.src = image;
+        }
+
+  </script>
+
+</head>
+<body>
+
+  <div class = "container" style ="margin: auto; border:1px solid green; border: auto;width: 260px;">
+    <div></div>
+    <img type="image" id="img1" src="rollex.png" style="width:100px" ; height="100px">
+    <button id="btn" onClick="swap()">Swap</button>
+    <img type="image" id="img2" src="watch.webp" style="width:100px" ; height="100px">
+  </div>
+
+</body>
+</html>
