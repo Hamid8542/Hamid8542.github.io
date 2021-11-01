@@ -1,0 +1,78 @@
+<!-- Lab-4  -->
+<!-- ## Exercise 02
+1. Create a simple `calculator.html` page which has 3 inputs and 1 `submit` button on it.
+2. The first 2 inputs are only allowed to put numbers.
+3. If you use type any number in the first 2 inputs, then click `submit` button.
+JavaScript will sum the two numbers, display the typed number in the first 2 inputs, the result in the last input. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+  .container{
+      margin:auto;
+      margin-top: 60px;
+      padding: 20px;
+      
+  }
+.myButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    
+}
+    </style>
+</head>
+
+<script>
+   
+    function add(){
+        let firstValue = Number(document.getElementById ("firstValue").value);
+        let secondValue = Number(document.getElementById ("secondValue").value);
+        let result = firstValue + secondValue;
+        document.getElementById("result").value = result;
+       
+    }
+
+    function Clear(){
+      document.getElementById("firstValue").value = "";
+      document.getElementById("secondValue").value = "";
+      document.getElementById("result").value = "";
+    }
+
+</script>
+
+<body>
+    
+     <div class = "container" style="border: solid green;width:300px;height:230px; text-align: center;">
+        <h1>My Calculator</h1>
+       <div>
+     <p> First Value : &nbsp;&nbsp;&nbsp;
+        <input type = "text" id = "firstValue" value = "" placeholder= "Enter The First Value" required>  
+        </p>      
+     </div>
+   
+     <div>
+       <p> Second Value :
+        <input type = "text" id = "secondValue" value = "" placeholder="Enter The Second Value" required>   
+       </p>   
+     </div>      
+       <p> Result : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type = "text" id = "result" value="" readonly > 
+       </p>
+   <div class = "myButton" >
+    <!-- <input type = "submit" value = "Submit" onclick = "add()" > -->
+    <!-- <input type = "submit" value = "Clear" onclick = "clear()" > -->
+    <button type="button" onclick="add();">Submit</button>
+    <button type="button" onclick="Clear();">Clear</button>
+   </div>   
+  
+</div>
+    
+</body>
+</html>
