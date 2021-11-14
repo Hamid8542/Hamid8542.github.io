@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.img{
+    
+    height: 150px;
+    width: 1200px;
+    margin-left: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  
+}
+.myHeader{
+    display:grid;
+    background-color: lightskyblue;
+    color: white;
+    padding: 15px;
+   
+}
+.vertical-line{
+    display: inline-block;
+    border-right: 1px solid white;
+    padding: 10px;
+}
+.mainbody{
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+.Container {
+    border: solid 2px;
+    border-color: gray;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+
+}
