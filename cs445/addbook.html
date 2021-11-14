@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+        <script src="js/app.js"></script>
+
+    <style>
+      
+    </style>
+
+</head>
+
+<body>
+    <div class="Container">
+      
+    <div>
+        <h1 style="color: blue;">New Book Form</h1>
+    </div>
+    <p> <b>Note: </b>Form Fields marked with asterisk(*) are required.</p>
+    
+    <div class="myDiv m-3">
+
+        <div class="row 12">
+            <div class="col-12 ">
+                <label class=form-label>*Book Title</label>
+            </div>
+            <div class="col-12">
+                <input class="form-control" type="text" name="booktitle" id="booktitle" placeholder="" required>
+            </div>
+        </div>
+
+        <div class="row 12">
+            <div class="col-6 py-2">
+                <label class=form-label>*ISBN</label>
+            </div>
+            <div class="col-6 py-2">
+                <label class=form-label>*Overdue Fee per day</label>
+            </div>
+
+            <div class="col-6 ">
+                <input class="form-control" type="number" name="isbn" id="isbn" placeholder="xxx-xxxx-xxxx" required>
+            </div>
+
+            <div class="col-6">
+                <input class="form-control" type="number" name="overduepay" id="overduepay" placeholder="0.00" required>
+                <p>Enter a valid decimal amount; in dollars and cents; no comma(e.g. 1.99)</p>
+            </div>
+           </div>
+
+            <div class="row 12">
+                <div class="col-6 py-2">
+                    <label class=form-label>*Publisher</label>
+                </div>
+                <div class="col-6 py-2">
+                    <label class=form-label>*Date of Published</label>
+                </div>
+           
+                <div class="col-6">
+                    <input class="form-control" type="text" name="isbn" id="isbn" placeholder="" required>
+                </div>
+
+                <div class="col-5">
+                    <input class="form-control" type="number" name="isbn" id="isbn" placeholder="mm/dd/yyyy" required>
+                   
+                </div>
+                <div class="col-1">
+                    <label class="glyphicon glyphicon-calendar"> </label>
+                </div>
+
+            </div>
+            <!-- <label class="glyphicon glyphicon-user"></label>
+            <label class="glyphicon glyphicon-user" for="Inputfirstname" class="form-label"></label> -->
+               
+                   
+                    <div class="row mt-3" style="margin-left:300px;  text-align:right;">
+                        <div class="offset-6 col-1">
+                            <button class="btn btn-primary" style="padding-right: 5px;">Reset</button>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-primary ">Save Book</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+   
+    </body>
+</html>
