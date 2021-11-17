@@ -65,13 +65,12 @@
                             <input class="form-control" type="text" name="isbn" id="isbn" value="" required>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                   <div class="col-md-6">
                         <div class="form-group">
-                            <label for="overdueFee">*Overdue Fee Per Day:</label>
-                            <input class="form-control" type="number" name="overdueFee" id="overdueFee" value="" placeholder="0" >
+                            <label for="overdueFee">*Overdue Fee:</label>
+                            <input class="form-control" type="number" step=".01" min="0" name="overdueFee" id="overdueFee" value="0.00" required>
                         </div>
                     </div>
-                </div>
                 <div class="row my-3">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -82,7 +81,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="datePublished">*Date Published:</label>
-                            <input class="form-control" type="text" name="datePublished" id="datePublished" value="" placeholder="yyyy-mm-dd"  required >
+                            <input class="form-control" type="date" name="datePublished" id="datePublished" value="" required>
                         </div>
                     </div>
                 </div>
