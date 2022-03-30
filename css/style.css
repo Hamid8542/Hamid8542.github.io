@@ -1,0 +1,24 @@
+body {
+    margin: 10px;
+    border: 10px solid cornflowerblue;
+    padding: 40px;
+}
+h1 {
+    text-align: center;
+}
+.myImg {
+    margin-bottom: 40px;
+    
+}
+
+ol a:last-child {
+    color: rgb(255, 61, 47);
+}
+
+ul a {
+    color:red
+}
+
+p a:last-child{
+    color: red;
+}
