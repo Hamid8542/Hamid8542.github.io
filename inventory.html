@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/inventory.css">
+  <script src="/js/inventory.js"></script>
+
+</head>
+<body>
+    
+   <h1>Inventory</h1>
+     <div>
+        <p>
+          Item Name: <br>
+           <input type="text" value="" id="itemname" />
+        </p>
+
+        <p>
+          Item Category: <br> 
+          <input type="text" value="" id="category" />
+        </p>
+
+        <p>
+          Quantity: <br>
+          <input type="number" value="" id="quantity" />
+        </p>
+
+        <p>
+          <button  onclick="addItem()" >Add</button>
+        </p>  
+
+        <br />
+      </div>
+
+      <table id="tableId">
+        
+          <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Quantity</th>           
+          </tr>
+
+      </table>
+    
+    </body>
+  </html>
