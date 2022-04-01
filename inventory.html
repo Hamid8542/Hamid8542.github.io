@@ -23,6 +23,11 @@
           Quantity: <br>
           <input type="number" value="" id="quantity" />
         </p>
+        
+        <p>
+          Ratings: <br>
+          <input type="number" value="" id="rating" />
+        </p>
 
         <p>
           <button  onclick="addItem()" >Add</button>
@@ -36,9 +41,12 @@
           <tr>
             <th>Product Name</th>
             <th>Category</th>
-            <th>Quantity</th>           
+            <th>Quantity</th>
+            <th>Ratings</th> 
+            <th>Edit</th>  
+            <th>Delete</th> 
           </tr>
-
+         <tbody id="items"></tbody>
       </table>
     
     </body>
