@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Complex flexbox example</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+
+        section {
+            display: flex;
+        }
+
+        article {
+            flex: 1 200px;
+        }
+
+        article:nth-of-type(3) {
+            flex: 3 200px;
+            display: flex;
+            flex-flow: column;
+        }
+
+        article:nth-of-type(3) div:first-child {
+            flex: 1 100px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        button {
+            flex: 1 auto;
+            margin: 5px;
+            font-size: 18px;
+            line-height: 1.5;
+            
+        }
+        
+        button:nth-child(5){
+            align-self: flex-end; 
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <article>
+            <h2>First article</h2>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio consequatur debitis a. Aspernatur quae
+                sapiente tempora inventore tenetur nesciunt eius esse porro molestias. Delectus aperiam, distinctio sint
+                fugit ipsum deserunt?</p>
+        </article>
+
+        <article>
+            <h2>Second article</h2>
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos perferendis, natus nam ducimus qui
+                ea necessitatibus expedita ipsa laboriosam perspiciatis commodi aspernatur tenetur saepe ipsum impedit!
+                Quod debitis nisi est.</p>
+        </article>
+
+        <article>
+            <div>
+                <button>Smile</button>
+                <button>Laugh</button>
+                <button>Wink</button>
+                <button>Shrug</button>
+                <button>Blush</button>
+            </div>
+            <div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum repellendus tempora unde! Atque, fuga
+                    quam molestiae reiciendis consequuntur fugit. Impedit molestias, nesciunt repellendus cum ea illo
+                    inventore consequatur architecto voluptas?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos quas aliquid quo sit eligendi provident
+                    illum tempore. Consequuntur est, et neque eos tempore aspernatur, architecto, repudiandae quae quia
+                    illum repellat.</p>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>
