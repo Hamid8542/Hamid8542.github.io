@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Registration Form</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+
+  <style>
+    .container {
+
+      width: 300px;
+      height: 150px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+    }
+
+    .form-label {
+      padding: auto;
+
+    }
+
+    .mb-3 {
+      display: inline-flex;
+      gap: 3px;
+      margin-top: 10px;
+
+    }
+
+    .form-check {
+      display: inline-flex;
+      gap: 20px;
+      margin-top: 10px;
+
+    }
+
+    .btn-warning {
+      background-color: hwb(60 0% 0%);
+      color: black;
+      width: 300px;
+      font-size: 18px;
+      color: white;
+      margin-top: 20px;
+
+    }
+
+    .myDiv {
+      background-color: white;
+      border: 1px solid gray;
+      padding: 20px;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+    }
+
+    .form-select {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-check-label {}
+  </style>
+
+  <script>
+
+    window.onload = function () {
+      // localStorage.removeItem("users");
+      let password = document.getElementById("password"),
+        repassword = document.getElementById("repassword");
+      let passw = /^(?=.*\d)(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,14}$/;
+
+      //page redirect
+      function getData() {
+        //gettting the values
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let cpassword = document.getElementById("repassword").value;
+        let fname = document.getElementById("firstname").value;
+        let lname = document.getElementById("lastname").value;
+        let gender = document.querySelector('input[name="gender"]:checked').value;
+        let country = document.querySelector('input[name="country"]:selected').value;
+        let role = document.querySelector('input[name="role"]:checked').value;
+
+        //saving the values in local storage
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        let newUser = [
+          {
+            email: email,
+            password: password,
+            firstName: fname,
+            lastName: lname,
+            gender: gender,
+            country:country,
+            role: role,
+          },
+        ];
+
+        
+        if (users == null || (users != null && users.length == 0)) {
+          users = newUser;
+        } else {
+          users = users.concat(newUser);
+        }
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        //window.location.href = "Login.html";
+        window.location.href = "preview.html";
+      }
+
+      function validatTheInput() {
+        if (!password.value.match(passw) || !repassword.value.match(passw)) {
+          alert("enter vaild password please");
+          return false;
+        }
+
+        return true;
+      }
+
+      document.getElementById("signup-form").onsubmit = function (e) {
+        e.preventDefault();
+        if (validatTheInput() && validatePassword()) {
+          getData();
+        }
+      };
+
+      function validatePassword() {
+        if (password.value != repassword.value) {
+          repassword.setCustomValidity("Your Passwords Don't Match");
+          return false;
+        } else {
+          repassword.setCustomValidity("");
+          return true;
+        }
+      }
+
+      password.onchange = validatePassword;
+      repassword.onkeyup = validatePassword;
+    };
+
+
+    
+  </script>
+</head>
+<body>
+
+  <form id="signup-form">
+    <form action="preview.html">
+      <div class="container">
+        <div class="position-relative bg-prmary border border-warning">
+
+        </div>
+        <div class="myDiv">
+
+          <h2 style="text-align: center;padding-bottom: 10px;"> <b>Responsive Registration Form</b> </h2>
+
+          <div class="mb-3 col-12">
+            <label class="glyphicon glyphicon-envelope" for="InputEmail1" class="form-label"></label>
+            <input type="email" class="form-control" id="email" placeholder="Email " required>
+          </div>
+
+          <div class="mb-3 col-12">
+            <label class="glyphicon glyphicon-lock" for="InputPassword1" class="form-label"></label>
+            <input type="password" class="form-control" id="password" placeholder="Password ">
+          </div>
+
+          <div class="mb-3 col-12">
+            <label class="glyphicon glyphicon-lock" for="InputPassword1" class="form-label"></label>
+            <input type="password" class="form-control" id="repassword" placeholder="Re-type Password">
+          </div>
+
+          <div class="mb-3 col-6">
+
+            <label class="glyphicon glyphicon-user" for="Inputfirstname" class="form-label"></label>
+            <input type="firstname" class="form-control" id="firstname" placeholder="First Name" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="mb-3 col-5">
+            <label class="glyphicon glyphicon-user" for="Inputlastname" class="form-label"></label>
+            <input type="lastname" class="form-control" id="lastname" placeholder="Last Name" value="" required>
+            <div class="valid-feedback" width="100px">
+              Looks good!
+            </div>
+          </div>
+
+          <!-- <div class="mb-3 col-12">
+            <label class="glyphicon glyphicon-envelope" for="InputEmail1" class="form-label"></label>
+            <input type="email" class="form-control" id="email" placeholder="Email " required>
+          </div>
+
+          <div class="mb-3 col-12">
+            <label class="glyphicon glyphicon-lock" for="InputPassword1" class="form-label"></label>
+            <input type="password" class="form-control" id="password" placeholder="Password ">
+          </div>
+
+          <div class="mb-3 col-12">
+            <label class="glyphicon glyphicon-lock" for="InputPassword1" class="form-label"></label>
+            <input type="password" class="form-control" id="repassword" placeholder="Re-type Password">
+          </div> -->
+
+          <!-- <div class="myCon col-12" style="font-size:14px">
+
+            <input class="form-check-input" type="radio" id="inlineCheckbox1" value="male" name="gender" />
+            <label class="form-check-label" for="inlineCheckbox1">Male</label>
+
+            <input class="form-check-input" type="radio" id="inlineCheckbox2" value="female" name="gender" />
+            <label class="form-check-label" for="inlineCheckbox2">Female</label>
+
+          </div> -->
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+
+
+          <div>
+            <select class="form-select" aria-label="Default select example " required>
+              <option selected>Select a country</option>
+              <option value="1">Ethiopia</option>
+              <option value="1">Eritrea</option>
+              <option value="1">Keneya</option>
+              <option value="1">Somalia</option>
+              <option value="1">United States</option>
+              <option value="2">Canada</option>
+              <option value="3">Germany</option>
+              <option value="3">England</option>
+              <option value="3">Russia</option>
+              <option value="3">China</option>
+              <option value="3">France</option>
+              <option value="3">Mexico</option>
+              <option value="3">Japan</option>
+            </select>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+            <label class="form-check-label" for="defaultCheck1">
+              I agree with terms and conditions
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" required>
+            <label class="form-check-label" for="defaultCheck2">
+              I want to receive the newsletters
+            </label>
+          </div>
+          <div class="mb-3 col-12">
+            <!-- <button type="button" name = "submit" value = "submit" class="btn btn-warning">Register</button> -->
+            <input class="btn btn-warning" type="submit" value="Register" />
+            <!-- <input type="text" name="fname"/>
+            <input type="text" name="lname"/> -->
+
+          </div>
+          <form>
+          </form>
+
+        </div>
+      </div>
+
+</body>
+
+</html>
