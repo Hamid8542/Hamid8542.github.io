@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+</head>
+<body>
+    <label for="">Name : John Doe</label>
+    <button onclick="edit()"> Edit</button>
+    <button onclick="save()"> Save</button>
+
+    <script>
+        const urlParams = URLSearchParams(window.location.search);
+        const myParam = urlParams.get('email');
+              myParam = urlParams.get('password');
+              myParam = urlParams.get('passwrod');
+              myParam = urlParams.get('firstname');
+              myParam = urlParams.get('lastname');
+              myParam = urlParams.get('gender');
+              myParam = urlParams.get('country');
+
+        let label = urlParams.get('email') + " " 
+                  + urlParams.get('password') + " " 
+                  + urlParams.get('password') + " " 
+                  + urlParams.get('firstname') + " " 
+                  + urlParams.get('lastname') + " " 
+                  + urlParams.get('gender') + " " 
+                  + urlParams.get('country') + " "  
+                  + urlParams.get('select');
+                  
+       function edit(){
+           window.location.href = "signup.html" + window.location.search;
+       }
+
+       function save(){
+        window.location.href="ThankYou.html";
+       }
+    </script>
+</body>
+</html>
