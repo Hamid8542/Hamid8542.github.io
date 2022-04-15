@@ -1,25 +1,22 @@
 body{
-    margin: 30px;
+    margin: 40px;
+    padding: 20px;
+    background-color: white;
 }
-
-th {
-    border-style: solid;
-    border-color: rgb(64, 64, 73);
+table{
+    border: 1px solid blue;
+    border-collapse: blue;
+    width: 100%;
+  
+}
+tr:nth-child(even){
+    background-color:yellowgreen;
+    border: 1px solid blue;
+}
+thead{
     background-color: blue;
-    color: aliceblue;
-    width: 10%;
-
+    color: white;
 }
-
-td {
-    border: 1px solid gray;
-    padding: 8px;
-}
-
-button {
-    display: flex;
-    margin: auto;
-    /* color: green; */
+tr:hover {
     background-color: green;
-    /* font-size: 20px; */
 }
