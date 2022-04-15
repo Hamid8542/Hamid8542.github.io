@@ -1,0 +1,25 @@
+body{
+    margin: 30px;
+}
+
+th {
+    border-style: solid;
+    border-color: rgb(64, 64, 73);
+    background-color: blue;
+    color: aliceblue;
+    width: 10%;
+
+}
+
+td {
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+button {
+    display: flex;
+    margin: auto;
+    /* color: green; */
+    background-color: green;
+    /* font-size: 20px; */
+}
