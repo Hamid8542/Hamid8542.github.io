@@ -1,7 +1,3 @@
-"use strict";
-/*eslint-disable*/
-
-
 
 let itemName = document.getElementById("itemId");
 let category = document.getElementById("categoryId");
@@ -10,10 +6,10 @@ let rating = document.getElementById("ratingId");
 let tableEl = document.getElementById("tableId");
 
 
-let arrtable = [{itName:"Phone", category:"Iphone", quantity:1000, rating:3.5},
-                {itName:"Introduction to Javascript", category:"Book", quantity:1500, rating:4},
-    { itName: "Phone", category: "Samsung", quantity: 200, rating: 4.5 },
-    {itName:"Apple Iphone 13", category:"Iphone", quantity:100, rating:5},];
+let arrtable = [{itemName:"Phone", category:"Iphone", quantity:1000, rating:3.5},
+                {itemName:"Introduction to Javascript", category:"Book", quantity:1500, rating:4},
+    { itemName: "Phone", category: "Samsung", quantity: 200, rating: 4.5 },
+    {itemName:"Apple Iphone 13", category:"Iphone", quantity:100, rating:5},];
 
 window.onload = function () {
 myDataArry(arrtable)
@@ -25,7 +21,7 @@ function myDataArry(arr){
     arr.forEach(element => {
         let rowdata = document.createElement("tr");
         rowdata.innerHTML =" <td >"
-        + element.itName + "</td> <td>"
+        + element.itemName + "</td> <td>"
         + element.category + "</td> <td>"
         + element.quantity + "</td> <td>"
         + element.rating + "</td><td> <button onClick='editButton(this)'>Edit</button> </td></td><td> <button onclick='removeButton(this)'>Remove</button> </td></tr>";
@@ -57,7 +53,7 @@ myDataArry(arrtable);
 
 }
 function add(){ 
-   arrtable.push({itName: itemName.value, category: category.value, quantity: quantity.value, rating: rating.value})
+   arrtable.push({itemName: itemName.value, category: category.value, quantity: quantity.value, rating: rating.value})
    myDataArry(arrtable);
 }
 let selectEl = document.getElementsByName("sorted")[0];
