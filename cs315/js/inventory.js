@@ -64,10 +64,10 @@ function sortedElement(){
         if(option.selected){
             if(option.value === "Name"){
     sortArr =arrtable.sort((a,b)=>{
-        if(a.itName > b.itName){
+        if(a.itemName > b.itemName){
             return 1
         }
-        else if(a.itName < b.itName){
+        else if(a.itemName < b.itemName){
             return -1;
         }
         else{
