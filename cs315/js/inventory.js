@@ -9,7 +9,7 @@ let tableEl = document.getElementById("tableId");
 let arrtable = [{itemName:"Phone", category:"Iphone", quantity:1000, rating:3.5},
                 {itemName:"Introduction to Javascript", category:"Book", quantity:1500, rating:4},
     { itemName: "Phone", category: "Samsung", quantity: 200, rating: 4.5 },
-    {itemName:"Apple Iphone 13", category:"Iphone", quantity:100, rating:5},];
+    {itemName:"Apple Iphone 13", category:"Iphone", quantity:100, rating:5}];
 
 window.onload = function () {
 myDataArry(arrtable)
