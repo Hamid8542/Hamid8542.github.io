@@ -24,8 +24,7 @@ function myDataArry(arr){
         + element.itemName + "</td> <td>"
         + element.category + "</td> <td>"
         + element.quantity + "</td> <td>"
-        + element.rating + "</td><td> <button onClick='editButton(this)'>Edit</button> 
-                             </td></td><td> <button onclick='removeButton(this)'>Remove</button> </td></tr>";
+        + element.rating + "</td><td> <button onClick='editButton(this)'>Edit</button></td></td><td> <button onclick='removeButton(this)'>Remove</button> </td></tr>";
         tableEl.append(rowdata);
         
     });
