@@ -24,7 +24,8 @@ function myDataArry(arr){
         + element.itemName + "</td> <td>"
         + element.category + "</td> <td>"
         + element.quantity + "</td> <td>"
-        + element.rating + "</td><td> <button onClick='editButton(this)'>Edit</button> </td></td><td> <button onclick='removeButton(this)'>Remove</button> </td></tr>";
+        + element.rating + "</td><td> <button onClick='editButton(this)'>Edit</button> 
+                             </td></td><td> <button onclick='removeButton(this)'>Remove</button> </td></tr>";
         tableEl.append(rowdata);
         
     });
@@ -38,14 +39,14 @@ function removeButton(obj){
 let selalltd;
 function editButton(obj){
  selalltd = (obj.parentNode.parentNode.rowIndex) -1;
- itemName.value =arrtable[selalltd].itName;
+ itemName.value =arrtable[selalltd].itemName;
  category.value = arrtable[selalltd].category;
  quantity.value = arrtable[selalltd].quantity;
  rating.value = arrtable[selalltd].rating;
 
 }
 function save() {
-arrtable[selalltd].itName = itemName.value; 
+arrtable[selalltd].itemName = itemName.value; 
 arrtable[selalltd].category = category.value;
 arrtable[selalltd].quantity = quantity.value;
 arrtable[selalltd].rating = rating.value;
