@@ -79,6 +79,34 @@
 
   <script>
 
+    window.addEventListener('load', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.entries().length == 0)
+        return;
+      document.getElementsByName('email')[0].value = urlParams.get('email');
+      document.getElementsByName('password')[0].value = urlParams.get('password');
+      document.getElementsByName('firstname')[0].value = urlParams.get('firstname');
+      document.getElementsByName('lastname')[0].value = urlParams.get('lastname');
+      document.getElementsByName('gender')[0].value = urlParams.get('gender');
+      document.getElementsByName('country')[0].value = urlParams.get('country');
+
+      if (urlParams.get('select').length == 0) {
+        return;
+
+        for (let eachOption of this.document.getElementsByName('select')[0].options) {
+          if (urlParamas.get('select').split(",").includes(eachOption))
+
+            eachOption.selected = true;
+          else
+            eachOption.selected = false;
+
+        }
+        document.getElementsByName("terms")[0].value = urlParamas.get("terms");
+        document.getElementsByName("terms2")[0].value = urlParamas.get("terms2");
+
+      };
+
+    
     window.onload = function () {
       // localStorage.removeItem("users");
       let password = document.getElementById("password"),
@@ -104,61 +132,18 @@
           {
             email: email,
             password: password,
-            repassword: repassword,
             firstName: firstname,
             lastName: lastname,
             gender: gender,
-            country:country,
+            country: country,
+          
           },
         ];
+  }     
 
-        
-        if (users == null || (users != null && users.length == 0)) {
-          users = newUser;
-        } else {
-          users = users.concat(newUser);
-        }
-
-        localStorage.setItem("users", JSON.stringify(users));
-
-        //window.location.href = "Login.html";
-        window.location.href = "preview.html";
-      }
-
-      function validatTheInput() {
-        if (!password.value.match(passw) || !repassword.value.match(passw)) {
-          alert("enter vaild password please");
-          return false;
-        }
-
-        return true;
-      }
-
-      document.getElementById("signup-form").onsubmit = function (e) {
-        e.preventDefault();
-        if (validatTheInput() && validatePassword()) {
-          getData();
-        }
-      };
-
-      function validatePassword() {
-        if (password.value != repassword.value) {
-          repassword.setCustomValidity("Your Passwords Don't Match");
-          return false;
-        } else {
-          repassword.setCustomValidity("");
-          return true;
-        }
-      }
-
-      password.onchange = validatePassword;
-      repassword.onkeyup = validatePassword;
-    };
-
-
-    
   </script>
 </head>
+
 <body>
 
   <form id="signup-form">
@@ -270,9 +255,9 @@
           </div>
           <div class="mb-3 col-12">
             <!-- <button type="button" name = "submit" value = "submit" class="btn btn-warning">Register</button> -->
-            <input class="btn btn-warning" type="submit" value="Register" />
-            <!-- <input type="text" name="fname"/>
-            <input type="text" name="lname"/> -->
+            <!-- <input class="btn btn-warning" type="submit" value="Register" /> -->
+            <input class="btn btn-warning" value="Register" onclick="document.forms[0].submit();" />
+            <!-- <button onclick="document.forms[0].submit();">Register</button> -->
 
           </div>
           <form>
@@ -280,6 +265,9 @@
 
         </div>
       </div>
+
+
+      <script src="signup.js"></script>
 
 </body>
 
