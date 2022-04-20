@@ -1,71 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preview Page</title>
+    <title>Preview</title>
+    <style>
+        body {
+            margin: 30px;
+            border: 2px solid lightblue;
+            padding: 20px;
+        }
 
+
+    </style>
 </head>
-<style>
-.myDiv{
-  
-    margin: auto;
-    gap: 15px;
-    width: 300px;
-    font-size: 15px;
-    margin-top: 20px;
-    /* width:40%; */
-    border: 1px solid rgb(83, 83, 248);
-    background-color: rgb(153, 209, 245);
-    padding: 15px;
-  
-}
-
-</style>
-
-
 <body>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <div class ="myDiv">
-            <lable>Email</lable>
-            <br></br>
-            <div>
-                <button onclick="edit()" style="background-color: rgb(235, 154, 116);width:170px; height:30px; border-radius: 5px;font-size: 20px;">Edit</button>
-                <br></br>
-                <button onclick="login()" style="background-color: rgb(235, 154, 116);width:170px; height:30px; border-radius: 5px;font-size: 20px;">Next</button><br></br>
-            </div>
-        
+  <label>Customers Signup information: </label>
+  <h2>This are your personal information that is used to login, are you sure ? </h2>
+  <h3>If you are not sure and make some changes please click <mark>Edit</mark> Edit button and make your correction.
+      Otherwise click <mark>Save</mark> button
+  </h3>
+    <button onclick="edit()">Edit</button>
+    <button id="save">Save</button>
     <script>
-                const urlParams=new URLSearchParams(window.location.search);
-                const myParms=urlParams.get('email');
-                // console.log(urlParams.get('email'));
-                let lable=document.getElementsByTagName("lable")[0];
-                lable.innerHTML=" Here are the  information you entered: email-: "  + urlParams.get('email')+ " Password: "+urlParams.get('password')+" First-Name: "+urlParams.get('fname')+
-                    " Last-Name: "+urlParams.get('lname')+" gender-male: "+urlParams.get('male')+" gender-female: "+urlParams.get('female')+" I agree on terms and conditions: "+ urlParams.get('iAgree')+ " " +
-                    " if your information is not correct edit else continue with next :  " 
-                   
-                
-            function edit(){
-                window.location.href="signup.html";
-            }
-                function login(){
-                window.location.href="Login.html";
-                
-                }
+        let savebtn = document.getElementById("save");
+        savebtn.onclick = save;
+        const urlParams = new URLSearchParams(window.location.search);
+        let label = document.getElementsByTagName("label")[0];
+        label.innerHTML ="Email: " +urlParams.get("validationCustom01")+"<br> First-name: "+urlParams.get("validationCustom04")+"<br> Last-Name: "+urlParams.get("validationCustom05")+"<br> Gender: "+urlParams.get("inlineRadioOptions")+"<br> Country: "+urlParams.get('select')+"<br> Agreement: "+urlParams.get("terms")+ "<br> NewsLetter: "+urlParams.get("terms2")+"<br>";
 
+        function edit(){
+            window.location.href = "index.html" + window.location.search;
+            
+        }
+
+        function save(){
+            window.location.href = "thankyou.html" + window.location.search;
+        }
+        
     </script>
-
-</div> 
-    </body>
+</body>
 </html>
