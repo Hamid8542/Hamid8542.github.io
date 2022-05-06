@@ -1,0 +1,39 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../css/calculator.css">
+    <script src="../js/calculator.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+     Input 1 : 
+        <input type="text" id="firstValue" value="" required>
+    
+     Input 2 : 
+        <input type="text" id="secondValue" value="" required>
+    
+
+Operator :
+    
+        <!-- <input type = "submit" value = "Submit" onclick = "add()" > -->
+        <!-- <input type = "submit" value = "Clear" onclick = "clear()" > -->
+        <button type="button" onclick="add();">+</button>
+        <button type="button" onclick="sub();">-</button>
+        <button type="button" onclick="mul();">*</button>
+        <button type="button" onclick="div();">/</button>
+       
+    Result : 
+    <!-- <span type="text" id="result"></span> -->
+    <input type="text" id="result" value="" readonly>
+
+</body>
+</html>
